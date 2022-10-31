@@ -21,7 +21,7 @@ public class Cliente extends Pessoa{
         nome = sc.nextLine();
         perfil.setNome(nome);
         System.out.println("Digite uma senha numérica: ");
-        senha = sc.nextInt();
+        senha = sc.nextInt(); sc.nextLine();
         perfil.setSenha(senha);
         user = "Cliente";
         perfil.setUser(user);
@@ -40,7 +40,17 @@ public class Cliente extends Pessoa{
         return login;
     }
 
+    public void opcoesTelaClientes(){
+        System.out.println("Escolha uma opção:");
+        System.out.println("1- faça um pedido");
+        System.out.println("2-sair");
+    }
     public void exibirTelaCliente(){
+        String nome="", user="";
+        int senha=0;
+        opcoesTelaClientes();
+        System.out.println("==========================");
+        int op = sc.nextInt();
         //aqui ficarão os ifs pra cada opção escolhida de cozinheiro 
     }
 

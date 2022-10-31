@@ -76,18 +76,35 @@ public class Aplicacao {
               }
               else if (op == 3) {
                   Pessoa clienteLogin = cliente.EntrarCliente();
-                  if(listaClientes.contains(clienteLogin)){
-                      System.out.println("Login efetuado com sucesso!");
-                      System.out.println(" ");
-                      System.out.println("========= Escolha um cozinheiro ========");
-                      System.out.println();
-                      int size = listaCozinheiros.size();
-                      for(int i = 0; i < size; i++){
-                          System.out.println(i+1 + ". " + listaCozinheiros.get(i));
-                      }
+                  try{
+                  if(listaClientes.contains(clienteLogin)==false){
+                    throw new ExcecaoLogin();
+                    //   System.out.println("Login efetuado com sucesso!");
+                    //   System.out.println(" ");
+                    //   System.out.println("========= Escolha um cozinheiro ========");
+                    //   System.out.println();
+                    //   int size = listaCozinheiros.size();
+                    //   for(int i = 0; i < size; i++){
+                    //       System.out.println(i+1 + ". " + listaCozinheiros.get(i));
+                    //   }
                   }
-                  else{
-                      System.out.println("Usuário não corresponde / Senha incorreta"); 
+                    else if(listaClientes.contains(clienteLogin)==true){
+                        System.out.println("Login efetuado com sucesso!");
+                        System.out.println(" ");
+                        System.out.println("========= Escolha um cozinheiro ========");
+                        System.out.println();
+                        int size = listaCozinheiros.size();
+                        if(size>=1){
+                        for(int i = 0; i < size; i++){
+                            System.out.println(i+1 + ". " + listaCozinheiros.get(i));
+                        }
+                       }
+                       else{
+                        System.out.println("Não temos cozinheiros disponíveis no momento.");
+                       }
+                    }
+                 }catch(Exception e){
+                    System.out.println("Usuário não corresponde / Senha incorreta"); 
                   }
               }
               else if (op== 4) {
