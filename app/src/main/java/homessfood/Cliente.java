@@ -33,7 +33,7 @@ public class Cliente extends Pessoa{
         System.out.println("Digite seu nome de usuário: ");
         String nomeInserido = sc.nextLine();
         nomeInserido = sc.nextLine();
-        //nomeInserido = sc.nextLine();
+        sc.nextLine();
 
         System.out.println("Digite uma senha numérica: ");
         int senhaInserida = sc.nextInt();
