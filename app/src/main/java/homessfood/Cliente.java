@@ -37,7 +37,7 @@ public class Cliente extends Pessoa{
 
         System.out.println("Digite uma senha numérica: ");
         int senhaInserida = sc.nextInt();
-        user = "Cliente";
+        user = "Cliente"; 
 
         Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
         return login;
