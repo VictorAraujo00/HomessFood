@@ -62,6 +62,7 @@ public class Cozinheiros extends Pessoa{
 
         System.out.println("Digite uma senha numérica: ");
         int senhaInserida = sc.nextInt();
+        sc.nextLine();
         user = "Cozinheiro";
 
         Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
