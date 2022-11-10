@@ -19,12 +19,10 @@ public class Aplicacao {
         System.out.println("5. Sair");
     }
 
-    public static void exibiropcoes() throws ExcecaoLogin {
+    // public static void exibiropcoes() throws ExcecaoLogin {
         
 
-    }
-
-
+    // }
 
 
     public static void main(String[] args) throws ExcecaoLogin {
@@ -61,7 +59,8 @@ public class Aplicacao {
                    }catch(ExcecaoLogin e){
                 
                    //else {
-                      System.out.println("Usuário não corresponde / Senha incorreta"); 
+                      //System.out.println("Usuário não corresponde / Senha incorreta");
+                      System.out.println("Usuário não corresponde /  Senha incorreta"); 
                   }
               }
               else if (op== 2) {
