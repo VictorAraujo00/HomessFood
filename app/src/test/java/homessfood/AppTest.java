@@ -4,6 +4,9 @@
 package homessfood;
 
 import org.junit.jupiter.api.Test;
+
+import homessfood.application.App;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class AppTest {
