@@ -1,20 +1,23 @@
 package homessfood.entities;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class Cozinheiros extends Pessoa{
     
     Scanner sc = new Scanner(System.in);
 
-    private FazerPedido pedido;
+    private static FazerPedido pedido;
     private String[] cardapio;
     private float avaliacao; 
     private float mediaAvaliacao;//media das avaliacoes
     private int quantidadeDeAvaliacoes;
-    private int indescolhido;
+    private static int indescolhido;
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
+    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+  
 
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
@@ -37,15 +40,16 @@ public class Cozinheiros extends Pessoa{
         //Cardapio();
         System.out.println("Quantos pratos terá em seu cardápio? ");
         int quantidadeDeCardapios = sc.nextInt();
-        //setQuantidadeDeCardapios(quantidadeDeCardapios);
-        setCardapio(cardapio, quantidadeDeCardapios);
+      
+        setCardapio(this.cardapio, quantidadeDeCardapios);
         System.out.println("Digite seus pratos: ");
-        cardapio[0] = sc.nextLine();
+        this.cardapio[0] = sc.nextLine();
         for (int i = 0; i < quantidadeDeCardapios; i++) {
             // System.out.println("coloque um pratinho");
              System.out.println((i+1)+ ": ");
-             cardapio[i] = sc.nextLine();
+             this.cardapio[i] = sc.nextLine();
          }
+        cardapios.addLast(this.cardapio);
         System.out.println(perfil.toString());
 
         for (int i = 0; i < quantidadeDeCardapios; i++) {
@@ -73,34 +77,48 @@ public class Cozinheiros extends Pessoa{
     public void opcoesTelaCozinheiros(){
         System.out.println("Escolha uma opção:");
         System.out.println("1- Visualizar quantos pedidos foram realizados");
-        //System.out.println("2- ");
         System.out.println("2- Visualizar qual o valor total ganho com a venda dos pratos");
         System.out.println("3- sair");
     }
 
     public void exibirTelaCozinheiro(){
-        String nome="", user="";
-        int senha=0;
+        //String nome="", user="";
+        //int senha=0;
         opcoesTelaCozinheiros();
+
         System.out.println("==========================");
         int op = sc.nextInt();
 
-        //aqui ficará um do while mostrando as opções a serem escolhidas (while != 3)
+        if (op == 1) {
+            
+        }
+        else if (op== 2) {
+               
+        }
+        else if (op == 3){
+            return; 
+        } while (op !=3);
+  
        
     }
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
-    public void Cardapios(String[] cardapio) {
+    public static void Cardapios(String[] cardapio) {
+        Scanner sc = new Scanner(System.in);
         System.out.println(" ======= Cardápio ======= ");
         for (int i = 0; i < cardapio.length; i++) {
-             System.out.println(cardapio[i]);
+             System.out.println((i+1) + ". " + cardapio[i]);
 
         }
+        System.out.println(" ");
         System.out.println("ESCOLHA O SEU PEDIDO: ");
         indescolhido = sc.nextInt(); //nullpointer
         String comida = pedido.EscolhadoItemCardapio(cardapio, indescolhido);
         System.out.println("Você escolheu " + comida);
-        pedido.Avaliacao();
+        FazerPedido.pedidos.addLast(comida);
+        //obs: por enquanto os pedidos aparecem pra todos os cozinheiros; 
+        //pode colocar uma condição de se cardapio contain comida, vai aparecer, caso contrário é mensagem de que n recebeu pedidos
+        pedido.Avaliacao(); //ver dpois
     }
 
     public void exibirPedidosFeitos(){

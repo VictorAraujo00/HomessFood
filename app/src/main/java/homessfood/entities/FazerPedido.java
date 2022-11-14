@@ -1,18 +1,20 @@
 package homessfood.entities;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 
 public class FazerPedido {
     Scanner sc = new Scanner(System.in);
     private int quantPedidos, somaAvaliacao=0, quantAvaliacoes=0; 
-    private String[] pedidos; //o tamanho será a quantia de pedidos
+    //private String[] pedidos; //o tamanho será a quantia de pedidos
     private int avaliacao; 
     private float mediaAvaliacao;//fazer calculo de média, só vai adiconar, não aparece a avaliação individual; e será feita após o pedido (perguntando se foi recebido)
     private String pedido;
+    static LinkedList<String> pedidos = new LinkedList<String>();
 
     public FazerPedido(){
         this.quantPedidos=quantPedidos;
-        this.pedidos = new String[quantPedidos];
+        //this.pedidos = new String[quantPedidos];
         this.avaliacao=avaliacao;
         this.mediaAvaliacao=mediaAvaliacao;
         this.pedido=pedido;
@@ -22,9 +24,9 @@ public class FazerPedido {
         this.avaliacao = avaliacao;
     }
 
-    public void setPedidos(String[] pedidos) {
-        this.pedidos = pedidos;
-    }
+    //public void setPedidos(String[] pedidos) {
+    //    this.pedidos = pedidos;
+    //}
     public void setQuantPedidos(int quantPedidos) {
         this.quantPedidos = quantPedidos;
     }
@@ -38,9 +40,9 @@ public class FazerPedido {
         return this.quantPedidos;
     }
 
-    public String getPedidos(int cont){
-        return this.pedidos[cont];
-    }
+    //public String getPedidos(int cont){
+     //   return this.pedidos[cont];
+    //}
 
     public int getAvaliacao(){
         return this.avaliacao;
@@ -54,7 +56,7 @@ public class FazerPedido {
         int i;
         for(i=0; i< cardapio.length;i++){
             if(indescolhido==i+1){
-                 pedido= cardapio[i];
+                 pedido = cardapio[i];
             }
         }
         return pedido;

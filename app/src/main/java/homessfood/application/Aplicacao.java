@@ -60,6 +60,7 @@ public class Aplicacao {
                       }
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
                           System.out.println("Login efetuado com sucesso!");
+                          
                           cozinheiros.exibirTelaCozinheiro();
                        }
                    }catch(ExcecaoLogin e){
@@ -88,17 +89,7 @@ public class Aplicacao {
                     else if(listaClientes.contains(clienteLogin)==true){
                         System.out.println("Login efetuado com sucesso!");
                         System.out.println(" ");
-                        System.out.println("========= Escolha um cozinheiro ========");
-                        System.out.println();
-                        int size = listaCozinheiros.size();
-                        if(size>=1){
-                        for(int i = 0; i < size; i++){
-                            System.out.println(i+1 + ". " + listaCozinheiros.get(i));
-                        }
-                       }
-                        else{
-                         System.out.println("Não temos cozinheiros disponíveis no momento.");
-                        }
+                        Cliente.opcoesTelaClientes(listaCozinheiros);
                     }
                  }catch(Exception e){
                    // System.out.println("Não temos cozinheiros disponíveis no momento.");

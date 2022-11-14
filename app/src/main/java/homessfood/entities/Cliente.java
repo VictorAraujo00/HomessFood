@@ -1,5 +1,6 @@
 package homessfood.entities;
 
+import java.util.LinkedList;
 import java.util.Scanner;
 public class Cliente extends Pessoa{  
 
@@ -40,17 +41,40 @@ public class Cliente extends Pessoa{
         return login;
     }
 
-    public void opcoesTelaClientes(){
-        System.out.println("Escolha uma opção:");
-        System.out.println("1- faça um pedido");
-        System.out.println("2-sair");
+    public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
+        System.out.println("========= Escolha um cozinheiro ========");
+        System.out.println();
+        int i=0;
+        int size = listaCozinheiros.size();
+        if(size>=1){
+        for(i = 0; i < size; i++){
+            System.out.println(i+1 + ". " + listaCozinheiros.get(i));
+        }
+       }
+        else{
+         System.out.println("Não temos cozinheiros disponíveis no momento.");
+        }
+        int quant = listaCozinheiros.size();
+        exibirTelaCliente(quant);
     }
-    public void exibirTelaCliente(){
-        String nome="", user="";
-        int senha=0;
-        opcoesTelaClientes();
-        System.out.println("==========================");
+
+    public static void exibirTelaCliente(int size){
+        Scanner sc = new Scanner(System.in);
+        System.out.println(" ");
         int op = sc.nextInt();
+
+            for (int index = 0; index < size; index++) {
+                if (op == index+1) {
+                    Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
+
+                }
+                else if (op >= size) {
+                    return;
+                }
+            }
+        //} while (op >=size);
+        
+  
         //aqui ficarão os ifs pra cada opção escolhida de cozinheiro 
     }
 
