@@ -10,7 +10,7 @@ public class FazerPedido {
     private int avaliacao; 
     private float mediaAvaliacao;//fazer calculo de média, só vai adiconar, não aparece a avaliação individual; e será feita após o pedido (perguntando se foi recebido)
     private String pedido;
-    static LinkedList<String> pedidos = new LinkedList<String>();
+    static LinkedList<String> pedidosFeitos = new LinkedList<String>();
 
     public FazerPedido(){
         this.quantPedidos=quantPedidos;
@@ -63,18 +63,16 @@ public class FazerPedido {
         //obs-> só pode quando pedido for feito antes (?)
     }
 
-    public void receberPedidos(){
+    public static void receberPedidos(LinkedList<String> pedidosRecebidos){
         System.out.println(" ==================== ");
         System.out.println("PEDIDOS: ");
-        if (this.pedido == null) {
-            System.out.println("Você ainda não recebeu nenhum pedido.");
+        if (pedidosRecebidos.isEmpty()) {
+            System.out.println("Você ainda não recebeu nenhum pedido ");
             return;
+        } else {
+            System.out.println(pedidosRecebidos.toString());
         }
-        System.out.println("Você recebeu x pedidos."); //fazer contador sempre q for feito um pedido pro mesmo cozinheiro??? contador pra cada um ent
-        //renda pros cozinheiros, se sim fazer string de int e var pra renda total (sempre somando ao fazer novo pedido)
-        //tá... e depois?
-        System.out.println("Pedido recebido!");
-        //volta ao menuzinho com o perfil em cima, os pedidos, + mostrando a média
+        
     }
 
     public void setMediaAvaliacao(int estrelas) {

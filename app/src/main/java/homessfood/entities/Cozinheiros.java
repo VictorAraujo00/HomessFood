@@ -17,6 +17,7 @@ public class Cozinheiros extends Pessoa{
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
     static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    
   
 
     
@@ -81,21 +82,28 @@ public class Cozinheiros extends Pessoa{
         System.out.println("3- sair");
     }
 
+    public LinkedList<String> encontrarPedidos (int pos) {
+        LinkedList<String> pedidosRecebidos = new LinkedList<String>();
+        String[] cardapioDesseCozinheiro = cardapios.get(pos);
+            //String[]
+            for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
+                if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
+                    pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
+                }
+            }
+        return pedidosRecebidos;
+    }
+
     public void exibirTelaCozinheiro(int pos){
         //String nome="", user="";
         //int senha=0;
         opcoesTelaCozinheiros();
-
         System.out.println("==========================");
         int op = sc.nextInt();
 
         if (op == 1) {
-            //if (cardapios.get(pos).contains(FazerPedido.pedidos)) {
-                //System.out.println();
-                //FazerPedido.pedidos.get(op)
-           // } else {
-            //    System.out.println("Você ainda não tem nenhum pedido");
-           // }
+            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
+            FazerPedido.receberPedidos(pedidosRecebidos);
         }
         else if (op== 2) {
                
@@ -120,7 +128,7 @@ public class Cozinheiros extends Pessoa{
         indescolhido = sc.nextInt(); //nullpointer
         String comida = pedido.EscolhadoItemCardapio(cardapio, indescolhido);
         System.out.println("Você escolheu " + comida);
-        FazerPedido.pedidos.addLast(comida);
+        FazerPedido.pedidosFeitos.addLast(comida);
         //obs: por enquanto os pedidos aparecem pra todos os cozinheiros; 
         //pode colocar uma condição de se cardapio contain comida, vai aparecer, caso contrário é mensagem de que n recebeu pedidos
         pedido.Avaliacao(); //ver dpois
