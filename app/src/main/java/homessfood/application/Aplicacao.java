@@ -11,6 +11,9 @@ import homessfood.exceptions.ExcecaoLogin;
 
 
 public class Aplicacao {
+
+    static LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
+    static LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
     
     Scanner sc = new Scanner(System.in);
     //nao herda a superclasse pessoa, apenas a chama
@@ -23,6 +26,16 @@ public class Aplicacao {
         System.out.println("3. Entrar como cliente");
         System.out.println("4. Cadastrar como cliente");
         System.out.println("5. Sair");
+    }
+
+    public static int posNaLista(Pessoa cozinheiroLogin) {
+        int pos=0;
+        for (int i = 0; i < listaCozinheiros.size(); i++) {
+            if (listaCozinheiros.get(i) == cozinheiroLogin) {
+                pos = i;
+            }
+        }
+        return pos;
     }
 
     // public static void exibiropcoes() throws ExcecaoLogin {
@@ -45,8 +58,7 @@ public class Aplicacao {
         Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
         Cliente cliente = new Cliente(nome, user, senha);
         //criação de listas
-        LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
-        LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
+
         do {
             opcoes();
             op = sc.nextInt();
@@ -61,12 +73,7 @@ public class Aplicacao {
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
                           System.out.println("Login efetuado com sucesso!");
                            //achar posição do cozinheiro
-                        int pos=0;
-                        for (int i = 0; i < listaCozinheiros.size(); i++) {
-                            if (listaCozinheiros.get(i) == cozinheiroLogin) {
-                                pos = i;
-                            }
-                        }
+                        int pos = posNaLista(cozinheiroLogin); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
                         cozinheiros.exibirTelaCozinheiro(pos);
                        }
                    }catch(ExcecaoLogin e){
