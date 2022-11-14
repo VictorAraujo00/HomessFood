@@ -81,7 +81,7 @@ public class Cozinheiros extends Pessoa{
         System.out.println("3- sair");
     }
 
-    public void exibirTelaCozinheiro(){
+    public void exibirTelaCozinheiro(int pos){
         //String nome="", user="";
         //int senha=0;
         opcoesTelaCozinheiros();
@@ -90,7 +90,12 @@ public class Cozinheiros extends Pessoa{
         int op = sc.nextInt();
 
         if (op == 1) {
-            
+            //if (cardapios.get(pos).contains(FazerPedido.pedidos)) {
+                //System.out.println();
+                //FazerPedido.pedidos.get(op)
+           // } else {
+            //    System.out.println("Você ainda não tem nenhum pedido");
+           // }
         }
         else if (op== 2) {
                
