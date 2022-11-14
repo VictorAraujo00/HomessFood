@@ -78,15 +78,15 @@ public class Cozinheiros extends Pessoa{
     public void opcoesTelaCozinheiros(){
         System.out.println("Escolha uma opção:");
         System.out.println("1- Visualizar quantos pedidos foram realizados");
-        System.out.println("2- Visualizar qual o valor total ganho com a venda dos pratos");
-        System.out.println("3- sair");
+        //System.out.println("2- Visualizar qual o valor total ganho com a venda dos pratos");
+        System.out.println("2- Voltar");
     }
 
     public LinkedList<String> encontrarPedidos (int pos) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
         String[] cardapioDesseCozinheiro = cardapios.get(pos);
             //String[]
-            for (int index = 0; index < FazerPedido.pedidosFeitos.size(); index++) {
+            for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
                 }
@@ -104,13 +104,14 @@ public class Cozinheiros extends Pessoa{
         if (op == 1) {
             LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
             FazerPedido.receberPedidos(pedidosRecebidos);
+            return;
         }
-        else if (op== 2) {
+        //else if (op== 2) {
                
-        }
-        else if (op == 3){
+        //}
+        else if (op == 2){
             return; 
-        } while (op !=3);
+        } //while (op !=2);
   
        
     }
