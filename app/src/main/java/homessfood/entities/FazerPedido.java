@@ -65,7 +65,7 @@ public class FazerPedido {
 
     public static void receberPedidos(LinkedList<String> pedidosRecebidos){
         System.out.println(" ==================== ");
-        System.out.println("PEDIDOS: ");
+        System.out.println("PEDIDOS REALIZADOS: ");
         if (pedidosRecebidos.isEmpty()) {
             System.out.println("Você ainda não recebeu nenhum pedido ");
             return;

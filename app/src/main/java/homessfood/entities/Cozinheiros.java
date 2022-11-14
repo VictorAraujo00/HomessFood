@@ -86,7 +86,7 @@ public class Cozinheiros extends Pessoa{
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
         String[] cardapioDesseCozinheiro = cardapios.get(pos);
             //String[]
-            for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
+            for (int index = 0; index < FazerPedido.pedidosFeitos.size(); index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
                 }

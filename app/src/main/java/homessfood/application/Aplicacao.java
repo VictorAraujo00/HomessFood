@@ -61,18 +61,15 @@ public class Aplicacao {
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
                           System.out.println("Login efetuado com sucesso!");
                            //achar posição do cozinheiro
-                        int pos;
-                        for (pos = 0; pos < listaCozinheiros.size(); pos++) {
-                            if (listaCozinheiros.get(pos) == cozinheiroLogin) {
-                                return;
+                        int pos=0;
+                        for (int i = 0; i < listaCozinheiros.size(); i++) {
+                            if (listaCozinheiros.get(i) == cozinheiroLogin) {
+                                pos = i;
                             }
                         }
-                          cozinheiros.exibirTelaCozinheiro(pos);
+                        cozinheiros.exibirTelaCozinheiro(pos);
                        }
                    }catch(ExcecaoLogin e){
-                
-                   //else {
-                      //System.out.println("Usuário não corresponde / Senha incorreta");
                       System.out.println("Usuário não corresponde /  Senha incorreta"); 
                   }
               }
