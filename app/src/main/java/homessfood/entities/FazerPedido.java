@@ -14,7 +14,6 @@ public class FazerPedido {
 
     public FazerPedido(){
         this.quantPedidos=quantPedidos;
-        //this.pedidos = new String[quantPedidos];
         this.avaliacao=avaliacao;
         this.mediaAvaliacao=mediaAvaliacao;
         this.pedido=pedido;
@@ -24,25 +23,17 @@ public class FazerPedido {
         this.avaliacao = avaliacao;
     }
 
-    //public void setPedidos(String[] pedidos) {
-    //    this.pedidos = pedidos;
-    //}
     public void setQuantPedidos(int quantPedidos) {
         this.quantPedidos = quantPedidos;
     }
     
     public String[] selecionarPedidos() {
-        //mostraPedidos()
         return null;
     }
 
     public int getQuantPedidos(){
         return this.quantPedidos;
     }
-
-    //public String getPedidos(int cont){
-     //   return this.pedidos[cont];
-    //}
 
     public int getAvaliacao(){
         return this.avaliacao;
@@ -60,7 +51,6 @@ public class FazerPedido {
             }
         }
         return pedido;
-        //obs-> só pode quando pedido for feito antes (?)
     }
 
     public static void receberPedidos(LinkedList<String> pedidosRecebidos){
@@ -92,8 +82,6 @@ public class FazerPedido {
         setMediaAvaliacao(estrelas);
         System.out.println("\u001b[1m Obrigada por dar "+estrelas+" estrelas! \u001b[m");
         System.out.println("\u001b[1m ============================== \u001b[m ");
-
-        //voltar a tela inicial
     }
 
 }
