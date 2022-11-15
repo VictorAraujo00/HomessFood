@@ -13,10 +13,10 @@ public class Cozinheiros extends Pessoa{
     private float mediaAvaliacao;//media das avaliacoes
     private int quantidadeDeAvaliacoes;
     private static int indescolhido;
+    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
     
   
 
