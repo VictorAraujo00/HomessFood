@@ -1,5 +1,5 @@
 package homessfood.entities;
 
-public class Cadastro {
+public class Registro {
     
 }
