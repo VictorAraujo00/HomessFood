@@ -5,7 +5,6 @@ import java.util.LinkedList;
 public class Registro {
     private LinkedList<Pessoa> lista;
 
-
     public Registro(LinkedList<Pessoa> lista) {
         this.lista = new LinkedList<>();
     }
