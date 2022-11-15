@@ -30,7 +30,7 @@ public class Cozinheiros extends Pessoa{
     }
 
     public Pessoa CadastroCozinheiro() {
-        System.out.println("Digite seu nome de usuário: ");
+       System.out.println("Digite seu nome de usuário: ");
         nome = sc.nextLine(); 
         perfil.setNome(nome);
         System.out.println("Digite uma senha numérica: ");

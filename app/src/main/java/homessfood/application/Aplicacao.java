@@ -16,7 +16,6 @@ public class Aplicacao {
     static LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
     
     Scanner sc = new Scanner(System.in);
-    //nao herda a superclasse pessoa, apenas a chama
     public static void opcoes(){
         System.out.println("");
         System.out.println(" ======= HOME'S FOOD ======= ");
@@ -38,16 +37,8 @@ public class Aplicacao {
         return pos;
     }
 
-    // public static void exibiropcoes() throws ExcecaoLogin {
-        
-
-    // }
-
 
     public static void main(String[] args) throws ExcecaoLogin {
-        //Scanner sc = new Scanner(System.in);
-        // opcoes();
-        // exibiropcoes();
         Scanner sc = new Scanner(System.in);
         int op=0;
         //incialização do objeto Pessoa para chamar métodos das classes cozinheiros e cliente
@@ -102,12 +93,11 @@ public class Aplicacao {
                         Cliente.opcoesTelaClientes(listaCozinheiros);
                     }
                  }catch(Exception e){
-                   // System.out.println("Não temos cozinheiros disponíveis no momento.");
+                    System.out.println("Não temos cozinheiros disponíveis no momento.");
                   }
               }
               else if (op== 4) {
-                  Pessoa novoCliente = cliente.CadastroCliente();
-                  //listaClientes.addLast(novoCliente);               
+                  Pessoa novoCliente = cliente.CadastroCliente();             
                   if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
                   }
