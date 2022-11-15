@@ -16,17 +16,6 @@ public class Cliente extends Pessoa{
        this.pedido = pedido;
     }
 
-    public Pessoa CadastroCliente() {
-        System.out.println("Digite seu nome de usuário: ");
-        nome = sc.nextLine();
-        perfil.setNome(nome);
-        System.out.println("Digite uma senha numérica: ");
-        senha = sc.nextInt(); sc.nextLine();
-        perfil.setSenha(senha);
-        user = "Cliente";
-        perfil.setUser(user);
-        return perfil; //vai adicionar na lista! onde isso acontece?
-    }
 
     public Pessoa EntrarCliente() {
         System.out.println("Digite seu nome de usuário: ");

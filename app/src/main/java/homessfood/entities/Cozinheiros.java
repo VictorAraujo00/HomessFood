@@ -10,8 +10,6 @@ public class Cozinheiros extends Pessoa{
     private static FazerPedido pedido;
     private String[] cardapio;
     private float avaliacao; 
-    private float mediaAvaliacao;//media das avaliacoes
-    private int quantidadeDeAvaliacoes;
     private static int indescolhido;
     static LinkedList<String[]> cardapios = new LinkedList<String[]>();
     String nome="", user="";
@@ -29,37 +27,7 @@ public class Cozinheiros extends Pessoa{
         //this.indescolhido = indescolhido;
     }
 
-    public Pessoa CadastroCozinheiro() {
-       System.out.println("Digite seu nome de usuário: ");
-        nome = sc.nextLine(); 
-        perfil.setNome(nome);
-        System.out.println("Digite uma senha numérica: ");
-        senha = sc.nextInt();
-        perfil.setSenha(senha);
-        user = "Cozinheiro";
-        perfil.setUser(user);
-        //Cardapio();
-        System.out.println("Quantos pratos terá em seu cardápio? ");
-        int quantidadeDeCardapios = sc.nextInt();
-      
-        setCardapio(this.cardapio, quantidadeDeCardapios);
-        System.out.println("Digite seus pratos: ");
-        this.cardapio[0] = sc.nextLine();
-        for (int i = 0; i < quantidadeDeCardapios; i++) {
-            // System.out.println("coloque um pratinho");
-             System.out.println((i+1)+ ": ");
-             this.cardapio[i] = sc.nextLine();
-         }
-        cardapios.addLast(this.cardapio);
-        System.out.println(perfil.toString());
-
-        for (int i = 0; i < quantidadeDeCardapios; i++) {
-            System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
-        }
-
-        return perfil;
-    }
-
+    
     public Pessoa EntrarCozinheiro() {
         System.out.println("Digite seu nome de usuário: ");
         String nomeInserido = sc.nextLine();
@@ -140,14 +108,6 @@ public class Cozinheiros extends Pessoa{
     public String[] getCardapio() {
         return this.cardapio;
     }
-
-    public float getMediaAvaliacao() {
-        return mediaAvaliacao;
-    }
- 
-    public int getQuantidadeDeAvaliacoes() {
-        return quantidadeDeAvaliacoes;
-    }
     
     public String getItemEscolhidoDoCardapio(){
        String itemEscolhido= pedido.EscolhadoItemCardapio(cardapio, indescolhido);
@@ -160,24 +120,6 @@ public class Cozinheiros extends Pessoa{
     public void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
         //this.cardapio = cardapio;
         this.cardapio= new String [quantidadeDeCardapios];
-    }
-
-    public void setMediaAvaliacao(float mediaAvaliacao) {
-        this.mediaAvaliacao = mediaAvaliacao;
-    }
-
-    public void setQuantidadeDeAvaliacoes(int quantidadeDeAvaliacoes) {
-        this.quantidadeDeAvaliacoes = quantidadeDeAvaliacoes;
-    }
-    public float avaliacao(float avaliacao){
-        this.avaliacao = avaliacao;
-        this.quantidadeDeAvaliacoes++;
-        return this.avaliacao;
-    }
-
-    public float media(){
-        this.mediaAvaliacao = this.avaliacao/this.quantidadeDeAvaliacoes;
-        return this.mediaAvaliacao;
     }
 
 

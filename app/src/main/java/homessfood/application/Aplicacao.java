@@ -7,6 +7,7 @@ import java.util.Scanner;
 import homessfood.entities.Cliente;
 import homessfood.entities.Cozinheiros;
 import homessfood.entities.Pessoa;
+import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
 
 
@@ -72,7 +73,7 @@ public class Aplicacao {
                   }
               }
               else if (op== 2) {
-                  Pessoa novoCozinheiro = cozinheiros.CadastroCozinheiro();
+                  Pessoa novoCozinheiro = Registro.CadastroCozinheiro();
                   if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }
@@ -97,7 +98,7 @@ public class Aplicacao {
                   }
               }
               else if (op== 4) {
-                  Pessoa novoCliente = cliente.CadastroCliente();             
+                  Pessoa novoCliente = Registro.CadastroCliente();             
                   if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
                   }
