@@ -78,7 +78,6 @@ public class Cozinheiros extends Pessoa{
     public void opcoesTelaCozinheiros(){
         System.out.println("Escolha uma opção:");
         System.out.println("1- Visualizar quantos pedidos foram realizados");
-        //System.out.println("2- Visualizar qual o valor total ganho com a venda dos pratos");
         System.out.println("2- Voltar");
     }
 
@@ -95,8 +94,6 @@ public class Cozinheiros extends Pessoa{
     }
 
     public void exibirTelaCozinheiro(int pos){
-        //String nome="", user="";
-        //int senha=0;
         opcoesTelaCozinheiros();
         System.out.println("==========================");
         int op = sc.nextInt();
@@ -106,12 +103,9 @@ public class Cozinheiros extends Pessoa{
             FazerPedido.receberPedidos(pedidosRecebidos);
             return;
         }
-        //else if (op== 2) {
-               
-        //}
         else if (op == 2){
             return; 
-        } //while (op !=2);
+        } 
   
        
     }
@@ -126,20 +120,19 @@ public class Cozinheiros extends Pessoa{
         }
         System.out.println(" ");
         System.out.println("ESCOLHA O SEU PEDIDO: ");
-        indescolhido = sc.nextInt(); //nullpointer
+        indescolhido = sc.nextInt(); 
         String comida = pedido.EscolhadoItemCardapio(cardapio, indescolhido);
         System.out.println("Você escolheu " + comida);
         FazerPedido.pedidosFeitos.addLast(comida);
         //obs: por enquanto os pedidos aparecem pra todos os cozinheiros; 
         //pode colocar uma condição de se cardapio contain comida, vai aparecer, caso contrário é mensagem de que n recebeu pedidos
-        pedido.Avaliacao(); //ver dpois
+        pedido.Avaliacao(); 
     }
 
     public void exibirPedidosFeitos(){
             System.out.println(getItemEscolhidoDoCardapio());
     }
 
-    //abaixo só um monte de getters e setters
 
     public float getAvaliacao() {
         return avaliacao;
