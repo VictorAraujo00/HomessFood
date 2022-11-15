@@ -17,7 +17,6 @@ public class Cliente extends Pessoa{
     }
 
     public Pessoa CadastroCliente() {
-        //em vez de super usar perfil
         System.out.println("Digite seu nome de usuário: ");
         nome = sc.nextLine();
         perfil.setNome(nome);
@@ -30,7 +29,6 @@ public class Cliente extends Pessoa{
     }
 
     public Pessoa EntrarCliente() {
-       // menu();
         System.out.println("Digite seu nome de usuário: ");
         String nomeInserido = sc.nextLine();
         System.out.println("Digite uma senha numérica: ");
@@ -72,10 +70,7 @@ public class Cliente extends Pessoa{
                     return;
                 }
             }
-        //} while (op >=size);
-        
-  
-        //aqui ficarão os ifs pra cada opção escolhida de cozinheiro 
+
     }
 
 }
