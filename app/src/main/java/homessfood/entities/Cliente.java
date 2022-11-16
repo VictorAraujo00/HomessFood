@@ -15,19 +15,6 @@ public class Cliente extends Pessoa{
        this.pedido = pedido;
     }
 
-
-    public Pessoa EntrarCliente() {
-        System.out.println("Digite seu nome de usuário: ");
-        String nomeInserido = sc.nextLine();
-        
-        System.out.println("Digite uma senha numérica: ");
-        int senhaInserida = sc.nextInt();sc.nextLine();
-        user = "Cliente"; 
-
-        Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
-        return login;
-    }
-
     public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();

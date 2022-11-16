@@ -6,6 +6,7 @@ import java.util.Scanner;
 
 import homessfood.entities.Cliente;
 import homessfood.entities.Cozinheiros;
+import homessfood.entities.Login;
 import homessfood.entities.Pessoa;
 import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
@@ -49,6 +50,8 @@ public class Aplicacao {
         //chamando objetos das classes
         Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
         Cliente cliente = new Cliente(nome, user, senha);
+        Registro registro = new Registro(nome, user, senha, cardapio);
+        Login login = new Login(nome, user, senha);
         //criação de listas
 
         do {
@@ -56,11 +59,10 @@ public class Aplicacao {
             op = sc.nextInt();
 
           if (op == 1) {
-              Pessoa cozinheiroLogin = cozinheiros.EntrarCozinheiro();
+              Pessoa cozinheiroLogin = login.EntrarCozinheiro();
               try{
                       if(listaCozinheiros.contains(cozinheiroLogin)==false){
                           throw new ExcecaoLogin();
-                          
                       }
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
                           System.out.println("Login efetuado com sucesso!");
@@ -73,7 +75,7 @@ public class Aplicacao {
                   }
               }
               else if (op== 2) {
-                  Pessoa novoCozinheiro = Registro.CadastroCozinheiro();
+                  Pessoa novoCozinheiro = registro.CadastroCozinheiro();
                   if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }
@@ -83,7 +85,7 @@ public class Aplicacao {
                   }
               }
               else if (op == 3) {
-                  Pessoa clienteLogin = cliente.EntrarCliente();
+                  Pessoa clienteLogin = login.EntrarCliente();
                   try{
                   if(listaClientes.contains(clienteLogin)==false){
                     throw new ExcecaoLogin();
@@ -98,7 +100,7 @@ public class Aplicacao {
                   }
               }
               else if (op== 4) {
-                  Pessoa novoCliente = Registro.CadastroCliente();             
+                  Pessoa novoCliente = registro.CadastroCliente();             
                   if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
                   }

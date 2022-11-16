@@ -5,23 +5,21 @@ import java.util.Scanner;
 
 public class Registro extends Pessoa {
 
-    static String nome="";
-    static String user="";
-    static int senha=0;
-    static Pessoa perfil = new Pessoa(nome, user, senha);
+    private String nome="";
+    private String user="";
+    private int senha=0;
+    private Pessoa perfil = new Pessoa(nome, user, senha);
     Scanner sc = new Scanner(System.in);
-    static String[] cardapio;
-    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    private String[] cardapio;
+    private LinkedList<String[]> cardapios = new LinkedList<String[]>();
 
     public Registro(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
         this.cardapio = new String[4];
         //this.avaliacao=avaliacao;
-        
     }
    
-    public static Pessoa CadastroCozinheiro() {
-        Scanner sc = new Scanner(System.in);
+    public Pessoa CadastroCozinheiro() {
         System.out.println("Digite seu nome de usuário: ");
          nome = sc.nextLine(); 
          perfil.setNome(nome);
@@ -60,9 +58,8 @@ public class Registro extends Pessoa {
     public String[] getCardapio() {
         return this.cardapio;
     }
-    
-    public static Pessoa CadastroCliente() {
-        Scanner sc = new Scanner(System.in);
+
+    public Pessoa CadastroCliente() {
         System.out.println("Digite seu nome de usuário: ");
         nome = sc.nextLine();
         perfil.setNome(nome);
