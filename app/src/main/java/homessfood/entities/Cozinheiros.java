@@ -11,15 +11,11 @@ public class Cozinheiros extends Pessoa {
 
     private static FazerPedido pedido;
     private String[] cardapio;
-    private float avaliacao; 
     private static int indescolhido;
     static LinkedList<String[]> cardapios = new LinkedList<String[]>();
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    
-  
-
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -28,7 +24,6 @@ public class Cozinheiros extends Pessoa {
         this.pedido = new FazerPedido();
         //this.indescolhido = indescolhido;
     }
-
     
     public Pessoa EntrarCozinheiro() {
         System.out.println("Digite seu nome de usuário: ");
@@ -41,7 +36,6 @@ public class Cozinheiros extends Pessoa {
         user = "Cozinheiro";
 
         Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
-
         return login;
     }
 
@@ -76,8 +70,6 @@ public class Cozinheiros extends Pessoa {
         else if (op == 2){
             return; 
         } 
-  
-       
     }
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
@@ -103,25 +95,10 @@ public class Cozinheiros extends Pessoa {
             System.out.println(getItemEscolhidoDoCardapio());
     }
 
-
-    public float getAvaliacao() {
-        return avaliacao;
-    }
-    public String[] getCardapio() {
-        return this.cardapio;
-    }
     
     public String getItemEscolhidoDoCardapio(){
        String itemEscolhido= pedido.EscolhadoItemCardapio(cardapio, indescolhido);
         return itemEscolhido; 
-    }
-
-    public void setAvaliacao(float avaliacao) {
-        this.avaliacao = avaliacao;
-    }
-    public void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
-        //this.cardapio = cardapio;
-        this.cardapio= new String [quantidadeDeCardapios];
     }
 
 
