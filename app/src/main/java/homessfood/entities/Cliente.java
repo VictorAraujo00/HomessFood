@@ -14,7 +14,7 @@ public class Cliente extends Pessoa{
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
     
-    public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
+    public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
         int i=0;
@@ -31,7 +31,7 @@ public class Cliente extends Pessoa{
         exibirTelaCliente(quant);
     }
 
-    public static void exibirTelaCliente(int size){
+    public void exibirTelaCliente(int size){
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
