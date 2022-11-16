@@ -19,7 +19,9 @@ public class Aplicacao {
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
         System.out.println("");
-        System.out.println("\u001b[37m \u001b[44m  ======= HOME'S FOOD =======  \u001b[m");
+        System.out.println("");
+        System.out.println("\u001b[34m \u001b[34m======= HOME'S FOOD =======\u001b[m");
+        System.out.println("");
         System.out.println("Escolha uma opção: ");
         System.out.println("1. Entrar como cozinheiro");
         System.out.println("2. Cadastrar como cozinheiro");
