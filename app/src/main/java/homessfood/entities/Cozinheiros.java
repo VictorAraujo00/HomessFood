@@ -42,7 +42,7 @@ public class Cozinheiros extends Pessoa {
 
     public void exibirTelaCozinheiro(int pos){
         opcoesTelaCozinheiros();
-        System.out.println("==========================");
+        System.out.println(" ========================== ");
         int op = sc.nextInt();
 
         if (op == 1) {

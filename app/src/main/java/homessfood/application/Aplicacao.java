@@ -93,7 +93,7 @@ public class Aplicacao {
                     else if(listaClientes.contains(clienteLogin)==true){
                         System.out.println("Login efetuado com sucesso!");
                         System.out.println(" ");
-                        Cliente.opcoesTelaClientes(listaCozinheiros);
+                        cliente.opcoesTelaClientes(listaCozinheiros);
                     }
                  }catch(Exception e){
                     System.out.println("Não temos cozinheiros disponíveis no momento.");
