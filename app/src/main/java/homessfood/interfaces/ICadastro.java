@@ -4,5 +4,5 @@ import homessfood.entities.Pessoa;
 
 // interface cadastroCozinheiros
 public interface ICadastro {
-    public Pessoa CadastroCozinheiros();
+    public Pessoa CadastroCozinheiro();
 }

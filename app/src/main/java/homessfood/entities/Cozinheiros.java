@@ -32,13 +32,18 @@ public class Cozinheiros extends Pessoa {
     public LinkedList<String> encontrarPedidos (int pos) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
         String[] cardapioDesseCozinheiro = cardapios.get(pos);
-            for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
+        int index;
+            for (index = 0; index < cardapioDesseCozinheiro.length; index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
                 }
+            } 
+            if(pedidosRecebidos.size()==0){
+                System.out.println("Não possui nenhum pedido no momento");
             }
         return pedidosRecebidos;
     }
+     
 
     public void exibirTelaCozinheiro(int pos){
         opcoesTelaCozinheiros();
