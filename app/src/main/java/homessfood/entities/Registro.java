@@ -57,7 +57,10 @@ public class Registro extends Pessoa {
         cardapio= new String [quantidadeDeCardapios];
     }
 
-
+    public String[] getCardapio() {
+        return this.cardapio;
+    }
+    
     public static Pessoa CadastroCliente() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite seu nome de usuário: ");
