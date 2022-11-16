@@ -56,7 +56,7 @@ public class Cozinheiros extends Pessoa {
     }
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
-    public void Cardapios(String[] cardapio) {
+    public static void Cardapios(String[] cardapio) {
         Scanner sc = new Scanner(System.in);
         System.out.println(" ======= Cardápio ======= ");
         for (int i = 0; i < cardapio.length; i++) {
