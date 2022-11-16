@@ -7,7 +7,7 @@ public class Login extends Pessoa {
     private String user="";
     private int senha=0;
     private Pessoa perfil = new Pessoa(nome, user, senha);
-    Scanner sc = new Scanner(System.in);
+  
 
     public Login(String nome, String user, int senha) {
         super(nome, user, senha);
@@ -29,6 +29,7 @@ public class Login extends Pessoa {
     }
 
     public Pessoa EntrarCliente() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Digite seu nome de usuário: ");
         String nomeInserido = sc.nextLine();
 
