@@ -4,34 +4,19 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import homessfood.interfaces.ITCliente;
-public class Cliente extends Pessoa {  
+public class Cliente extends Pessoa implements ITCliente{  
 
-    Scanner sc = new Scanner(System.in);
-    FazerPedido pedido;
-    String nome="", user="";
-    int senha=0;
-    Pessoa perfil = new Pessoa(nome, user, senha);
-    private Cozinheiros cozinheiros;
-    
     public Cliente(String nome, String user, int senha) {
        super(nome, user, senha);
        this.pedido = pedido;
     }
 
-
-    public Pessoa EntrarCliente() {
-        System.out.println("Digite seu nome de usuário: ");
-        String nomeInserido = sc.nextLine();
-        
-        System.out.println("Digite uma senha numérica: ");
-        int senhaInserida = sc.nextInt();sc.nextLine();
-        user = "Cliente"; 
-
-        Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
-        return login;
-    }
-
-    public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
+    FazerPedido pedido;
+    String nome="", user="";
+    int senha=0;
+    Pessoa perfil = new Pessoa(nome, user, senha);
+    
+    public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
         int i=0;
@@ -48,7 +33,7 @@ public class Cliente extends Pessoa {
         exibirTelaCliente(quant);
     }
 
-    public static void exibirTelaCliente(int size){
+    public void exibirTelaCliente(int size){
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
@@ -56,7 +41,6 @@ public class Cliente extends Pessoa {
             for (int index = 0; index < size; index++) {
                 if (op == index+1) {
                     Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
-
                 }
                 else if (op >= size) {
                     return;

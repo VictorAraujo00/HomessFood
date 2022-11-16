@@ -7,23 +7,21 @@ import homessfood.interfaces.ICadastro;
 
 public class Registro extends Pessoa implements ICadastro{
 
-    static String nome="";
-    static String user="";
-    static int senha=0;
-    static Pessoa perfil = new Pessoa(nome, user, senha);
+    private String nome="";
+    private String user="";
+    private int senha=0;
+    private Pessoa perfil = new Pessoa(nome, user, senha);
     Scanner sc = new Scanner(System.in);
-    static String[] cardapio;
-    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    private String[] cardapio;
+    private LinkedList<String[]> cardapios = new LinkedList<String[]>();
 
     public Registro(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
         this.cardapio = new String[4];
         //this.avaliacao=avaliacao;
-        
     }
    
-    public Pessoa CadastroCozinheiros() {
-        Scanner sc = new Scanner(System.in);
+    public Pessoa CadastroCozinheiro() {
         System.out.println("Digite seu nome de usuário: ");
          nome = sc.nextLine(); 
          perfil.setNome(nome);
@@ -46,25 +44,22 @@ public class Registro extends Pessoa implements ICadastro{
           }
          cardapios.addLast(cardapio);
          System.out.println(perfil.toString());
- 
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
          }
- 
          return perfil;
      }
 
      public static void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
         //this.cardapio = cardapio;
-        cardapio= new String [quantidadeDeCardapios];
+        cardapio = new String [quantidadeDeCardapios];
     }
 
     public String[] getCardapio() {
         return this.cardapio;
     }
-    
-    public static Pessoa CadastroCliente() {
-        Scanner sc = new Scanner(System.in);
+
+    public Pessoa CadastroCliente() {
         System.out.println("Digite seu nome de usuário: ");
         nome = sc.nextLine();
         perfil.setNome(nome);

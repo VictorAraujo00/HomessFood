@@ -6,10 +6,10 @@ import java.util.Scanner;
 
 import homessfood.entities.Cliente;
 import homessfood.entities.Cozinheiros;
+import homessfood.entities.Login;
 import homessfood.entities.Pessoa;
 import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
-
 
 public class Aplicacao {
 
@@ -19,7 +19,9 @@ public class Aplicacao {
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
         System.out.println("");
-        System.out.println(" ======= HOME'S FOOD ======= ");
+        System.out.println("");
+        System.out.println("\u001b[34m \u001b[34m======= HOME'S FOOD =======\u001b[m");
+        System.out.println("");
         System.out.println("Escolha uma opção: ");
         System.out.println("1. Entrar como cozinheiro");
         System.out.println("2. Cadastrar como cozinheiro");
@@ -38,7 +40,6 @@ public class Aplicacao {
         return pos;
     }
 
-
     public static void main(String[] args) throws ExcecaoLogin {
         Scanner sc = new Scanner(System.in);
         int op=0;
@@ -49,6 +50,8 @@ public class Aplicacao {
         //chamando objetos das classes
         Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
         Cliente cliente = new Cliente(nome, user, senha);
+        Registro registro = new Registro(nome, user, senha, cardapio);
+        Login login = new Login(nome, user, senha);
         //criação de listas
 
         do {
@@ -56,11 +59,10 @@ public class Aplicacao {
             op = sc.nextInt();
 
           if (op == 1) {
-              Pessoa cozinheiroLogin = cozinheiros.EntrarCozinheiro();
+              Pessoa cozinheiroLogin = login.EntrarCozinheiro();
               try{
-                      if(listaCozinheiros.contains(cozinheiroLogin)==false){
+                    if(listaCozinheiros.contains(cozinheiroLogin)==false){
                           throw new ExcecaoLogin();
-                          
                       }
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
                           System.out.println("Login efetuado com sucesso!");
@@ -73,10 +75,7 @@ public class Aplicacao {
                   }
               }
               else if (op== 2) {
-                  //Pessoa p = new Pessoa(nome, user, senha);
-                  Registro s = new Registro(nome, user, senha, cardapio);
-                  //Pessoa novoCozinheiro = p.Registro.CadastroCozinheiros();
-                  Pessoa novoCozinheiro = s.CadastroCozinheiros();
+                  Pessoa novoCozinheiro = registro.CadastroCozinheiro();
                   if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }
@@ -86,7 +85,7 @@ public class Aplicacao {
                   }
               }
               else if (op == 3) {
-                  Pessoa clienteLogin = cliente.EntrarCliente();
+                  Pessoa clienteLogin = login.EntrarCliente();
                   try{
                   if(listaClientes.contains(clienteLogin)==false){
                     throw new ExcecaoLogin();
@@ -94,14 +93,14 @@ public class Aplicacao {
                     else if(listaClientes.contains(clienteLogin)==true){
                         System.out.println("Login efetuado com sucesso!");
                         System.out.println(" ");
-                        Cliente.opcoesTelaClientes(listaCozinheiros);
+                        cliente.opcoesTelaClientes(listaCozinheiros);
                     }
                  }catch(Exception e){
                     System.out.println("Não temos cozinheiros disponíveis no momento.");
                   }
               }
               else if (op== 4) {
-                  Pessoa novoCliente = Registro.CadastroCliente();             
+                  Pessoa novoCliente = registro.CadastroCliente();             
                   if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
                   }

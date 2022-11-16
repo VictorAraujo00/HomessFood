@@ -3,7 +3,6 @@ package homessfood.entities;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.interfaces.ITCliente;
 
 public class Cozinheiros extends Pessoa {
     
@@ -20,24 +19,9 @@ public class Cozinheiros extends Pessoa {
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
         this.cardapio = new String[4];
-        //this.avaliacao=avaliacao;
         this.pedido = new FazerPedido();
-        //this.indescolhido = indescolhido;
     }
     
-    public Pessoa EntrarCozinheiro() {
-        System.out.println("Digite seu nome de usuário: ");
-        String nomeInserido = sc.nextLine();
-        //nomeInserido = sc.nextLine();
-
-        System.out.println("Digite uma senha numérica: ");
-        int senhaInserida = sc.nextInt();
-        sc.nextLine();
-        user = "Cozinheiro";
-
-        Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
-        return login;
-    }
 
     public void opcoesTelaCozinheiros(){
         System.out.println("Escolha uma opção:");
@@ -48,7 +32,6 @@ public class Cozinheiros extends Pessoa {
     public LinkedList<String> encontrarPedidos (int pos) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
         String[] cardapioDesseCozinheiro = cardapios.get(pos);
-            //String[]
             for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
@@ -59,7 +42,7 @@ public class Cozinheiros extends Pessoa {
 
     public void exibirTelaCozinheiro(int pos){
         opcoesTelaCozinheiros();
-        System.out.println("==========================");
+        System.out.println(" ========================== ");
         int op = sc.nextInt();
 
         if (op == 1) {
