@@ -4,18 +4,17 @@ import java.util.LinkedList;
 import java.util.Scanner;
 public class Cliente extends Pessoa{  
 
-    Scanner sc = new Scanner(System.in);
-    FazerPedido pedido;
-    String nome="", user="";
-    int senha=0;
-    Pessoa perfil = new Pessoa(nome, user, senha);
-    
     public Cliente(String nome, String user, int senha) {
        super(nome, user, senha);
        this.pedido = pedido;
     }
 
-    public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
+    FazerPedido pedido;
+    String nome="", user="";
+    int senha=0;
+    Pessoa perfil = new Pessoa(nome, user, senha);
+    
+    public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
         int i=0;
@@ -32,7 +31,7 @@ public class Cliente extends Pessoa{
         exibirTelaCliente(quant);
     }
 
-    public static void exibirTelaCliente(int size){
+    public void exibirTelaCliente(int size){
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
