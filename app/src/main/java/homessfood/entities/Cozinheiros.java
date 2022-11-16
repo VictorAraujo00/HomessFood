@@ -19,16 +19,12 @@ public class Cozinheiros extends Pessoa {
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
         this.cardapio = new String[4];
-        //this.avaliacao=avaliacao;
         this.pedido = new FazerPedido();
-        //this.indescolhido = indescolhido;
     }
     
     public Pessoa EntrarCozinheiro() {
         System.out.println("Digite seu nome de usuário: ");
         String nomeInserido = sc.nextLine();
-        //nomeInserido = sc.nextLine();
-
         System.out.println("Digite uma senha numérica: ");
         int senhaInserida = sc.nextInt();
         sc.nextLine();
@@ -47,7 +43,6 @@ public class Cozinheiros extends Pessoa {
     public LinkedList<String> encontrarPedidos (int pos) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
         String[] cardapioDesseCozinheiro = cardapios.get(pos);
-            //String[]
             for (int index = 0; index < cardapioDesseCozinheiro.length; index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
