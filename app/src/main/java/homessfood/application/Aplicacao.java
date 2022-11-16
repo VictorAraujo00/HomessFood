@@ -11,7 +11,6 @@ import homessfood.entities.Pessoa;
 import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
 
-
 public class Aplicacao {
 
     static LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
