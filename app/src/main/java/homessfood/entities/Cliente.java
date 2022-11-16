@@ -2,7 +2,13 @@ package homessfood.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+<<<<<<< HEAD
 public class Cliente extends Pessoa{  
+=======
+
+import homessfood.interfaces.ITCliente;
+public class Cliente extends Pessoa {  
+>>>>>>> 95ddbffda78acbc609125ca9e5c888ab7362285d
 
     Scanner sc = new Scanner(System.in);
     FazerPedido pedido;
