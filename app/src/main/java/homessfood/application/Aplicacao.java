@@ -73,7 +73,10 @@ public class Aplicacao {
                   }
               }
               else if (op== 2) {
-                  Pessoa novoCozinheiro = Registro.CadastroCozinheiro();
+                  //Pessoa p = new Pessoa(nome, user, senha);
+                  Registro s = new Registro(nome, user, senha, cardapio);
+                  //Pessoa novoCozinheiro = p.Registro.CadastroCozinheiros();
+                  Pessoa novoCozinheiro = s.CadastroCozinheiros();
                   if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }

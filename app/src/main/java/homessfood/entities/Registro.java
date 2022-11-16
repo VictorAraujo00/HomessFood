@@ -3,7 +3,9 @@ package homessfood.entities;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Registro extends Pessoa {
+import homessfood.interfaces.ICadastro;
+
+public class Registro extends Pessoa implements ICadastro{
 
     static String nome="";
     static String user="";
@@ -20,7 +22,7 @@ public class Registro extends Pessoa {
         
     }
    
-    public static Pessoa CadastroCozinheiro() {
+    public Pessoa CadastroCozinheiros() {
         Scanner sc = new Scanner(System.in);
         System.out.println("Digite seu nome de usuário: ");
          nome = sc.nextLine(); 
