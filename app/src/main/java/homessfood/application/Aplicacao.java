@@ -20,7 +20,7 @@ public class Aplicacao {
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
         System.out.println("");
-        System.out.println(" ======= HOME'S FOOD ======= ");
+        System.out.println("\u001b[37m \u001b[44m  ======= HOME'S FOOD =======  \u001b[m");
         System.out.println("Escolha uma opção: ");
         System.out.println("1. Entrar como cozinheiro");
         System.out.println("2. Cadastrar como cozinheiro");
@@ -38,7 +38,6 @@ public class Aplicacao {
         }
         return pos;
     }
-
 
     public static void main(String[] args) throws ExcecaoLogin {
         Scanner sc = new Scanner(System.in);
@@ -61,7 +60,7 @@ public class Aplicacao {
           if (op == 1) {
               Pessoa cozinheiroLogin = login.EntrarCozinheiro();
               try{
-                      if(listaCozinheiros.contains(cozinheiroLogin)==false){
+                    if(listaCozinheiros.contains(cozinheiroLogin)==false){
                           throw new ExcecaoLogin();
                       }
                       else if(listaCozinheiros.contains(cozinheiroLogin)==true){
