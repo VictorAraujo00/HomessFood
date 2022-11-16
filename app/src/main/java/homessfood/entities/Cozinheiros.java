@@ -22,19 +22,6 @@ public class Cozinheiros extends Pessoa {
         this.pedido = new FazerPedido();
     }
     
-    public Pessoa EntrarCozinheiro() {
-        System.out.println("Digite seu nome de usuário: ");
-        String nomeInserido = sc.nextLine();
-        //nomeInserido = sc.nextLine();
-
-        System.out.println("Digite uma senha numérica: ");
-        int senhaInserida = sc.nextInt();
-        sc.nextLine();
-        user = "Cozinheiro";
-
-        Pessoa login = new Pessoa(nomeInserido, user, senhaInserida);
-        return login;
-    }
 
     public void opcoesTelaCozinheiros(){
         System.out.println("Escolha uma opção:");
