@@ -4,17 +4,16 @@ import java.util.LinkedList;
 import java.util.Scanner;
 public class Cliente extends Pessoa{  
 
-    Scanner sc = new Scanner(System.in);
-    FazerPedido pedido;
-    String nome="", user="";
-    int senha=0;
-    Pessoa perfil = new Pessoa(nome, user, senha);
-    
     public Cliente(String nome, String user, int senha) {
        super(nome, user, senha);
        this.pedido = pedido;
     }
 
+    FazerPedido pedido;
+    String nome="", user="";
+    int senha=0;
+    Pessoa perfil = new Pessoa(nome, user, senha);
+    
     public static void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
