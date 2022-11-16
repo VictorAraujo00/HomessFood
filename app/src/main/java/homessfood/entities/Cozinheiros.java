@@ -3,7 +3,6 @@ package homessfood.entities;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.interfaces.ITCliente;
 
 public class Cozinheiros extends Pessoa {
     
