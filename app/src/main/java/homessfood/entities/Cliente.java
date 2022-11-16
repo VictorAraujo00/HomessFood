@@ -2,7 +2,9 @@ package homessfood.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
-public class Cliente extends Pessoa{  
+
+import homessfood.interfaces.ITCliente;
+public class Cliente extends Pessoa implements ITCliente{  
 
     Scanner sc = new Scanner(System.in);
     FazerPedido pedido;
