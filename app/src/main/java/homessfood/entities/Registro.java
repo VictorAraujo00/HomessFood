@@ -3,16 +3,25 @@ package homessfood.entities;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-public class Registro {
+public class Registro extends Pessoa {
 
-    String nome="", user="";
-    int senha=0;
-    Pessoa perfil = new Pessoa(nome, user, senha);
+    static String nome="";
+    static String user="";
+    static int senha=0;
+    static Pessoa perfil = new Pessoa(nome, user, senha);
     Scanner sc = new Scanner(System.in);
-    private String[] cardapio;
+    static String[] cardapio;
     static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+
+    public Registro(String nome, String user, int senha, String[] cardapio) {
+        super(nome, user, senha);
+        this.cardapio = new String[4];
+        //this.avaliacao=avaliacao;
+        
+    }
    
     public static Pessoa CadastroCozinheiro() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Digite seu nome de usuário: ");
          nome = sc.nextLine(); 
          perfil.setNome(nome);
@@ -25,15 +34,15 @@ public class Registro {
          System.out.println("Quantos pratos terá em seu cardápio? ");
          int quantidadeDeCardapios = sc.nextInt();
        
-         setCardapio(this.cardapio, quantidadeDeCardapios);
+         setCardapio(cardapio, quantidadeDeCardapios);
          System.out.println("Digite seus pratos: ");
-         this.cardapio[0] = sc.nextLine();
+         cardapio[0] = sc.nextLine();
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              // System.out.println("coloque um pratinho");
               System.out.println((i+1)+ ": ");
-              this.cardapio[i] = sc.nextLine();
+              cardapio[i] = sc.nextLine();
           }
-         cardapios.addLast(this.cardapio);
+         cardapios.addLast(cardapio);
          System.out.println(perfil.toString());
  
          for (int i = 0; i < quantidadeDeCardapios; i++) {
@@ -43,10 +52,14 @@ public class Registro {
          return perfil;
      }
 
-     private void setCardapio(String[] cardapio2, int quantidadeDeCardapios) {
+     public static void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
+        //this.cardapio = cardapio;
+        cardapio= new String [quantidadeDeCardapios];
     }
 
+
     public static Pessoa CadastroCliente() {
+        Scanner sc = new Scanner(System.in);
         System.out.println("Digite seu nome de usuário: ");
         nome = sc.nextLine();
         perfil.setNome(nome);
