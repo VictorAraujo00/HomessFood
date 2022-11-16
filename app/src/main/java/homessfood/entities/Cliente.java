@@ -2,16 +2,13 @@ package homessfood.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
-
-import homessfood.interfaces.ITCliente;
-public class Cliente extends Pessoa implements ITCliente{  
+public class Cliente extends Pessoa{  
 
     Scanner sc = new Scanner(System.in);
     FazerPedido pedido;
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    private Cozinheiros cozinheiros;
     
     public Cliente(String nome, String user, int senha) {
        super(nome, user, senha);
@@ -56,7 +53,6 @@ public class Cliente extends Pessoa implements ITCliente{
             for (int index = 0; index < size; index++) {
                 if (op == index+1) {
                     Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
-
                 }
                 else if (op >= size) {
                     return;
