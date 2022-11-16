@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Scanner;
 
 import homessfood.interfaces.ITCliente;
-public class Cliente extends Pessoa implements ITCliente{  
+public class Cliente extends Pessoa {  
 
     Scanner sc = new Scanner(System.in);
     FazerPedido pedido;
