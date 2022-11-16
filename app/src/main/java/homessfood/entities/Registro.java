@@ -42,17 +42,15 @@ public class Registro extends Pessoa {
           }
          cardapios.addLast(cardapio);
          System.out.println(perfil.toString());
- 
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
          }
- 
          return perfil;
      }
 
      public static void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
         //this.cardapio = cardapio;
-        cardapio= new String [quantidadeDeCardapios];
+        cardapio = new String [quantidadeDeCardapios];
     }
 
     public String[] getCardapio() {
