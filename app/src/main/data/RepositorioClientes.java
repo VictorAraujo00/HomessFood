@@ -6,7 +6,7 @@ public class RepositorioClientes {
     public RepositorioClientes() {
         this.listaClientes = new LinkedList<>();
     }
-    public void login(){
+    public void loginClientes(){
         Pessoa clienteLogin = login.EntrarCliente();
             if(listaClientes.contains(clienteLogin)==false){
                     throw new ExcecaoLogin();
@@ -18,7 +18,7 @@ public class RepositorioClientes {
                     }
     }
 
-    public void cadastro(){
+    public void cadastroClientes(){
         Pessoa novoCliente = registro.CadastroCliente();
           if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
