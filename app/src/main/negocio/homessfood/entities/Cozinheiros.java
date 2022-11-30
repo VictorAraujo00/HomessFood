@@ -11,10 +11,11 @@ public class Cozinheiros extends Pessoa {
     private static FazerPedido pedido;
     private String[] cardapio;
     private static int indescolhido;
-    static LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    //static LinkedList<String[]> cardapios = new LinkedList<String[]>();
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
+    Registro registro = new Registro(nome, user, senha, cardapio);
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -31,7 +32,7 @@ public class Cozinheiros extends Pessoa {
 
     public LinkedList<String> encontrarPedidos (int pos) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
-        String[] cardapioDesseCozinheiro = cardapios.get(pos);
+        String[] cardapioDesseCozinheiro = registro.getCardapios().get(pos);
         int index;
             for (index = 0; index < cardapioDesseCozinheiro.length; index++) {
                 if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
@@ -61,6 +62,7 @@ public class Cozinheiros extends Pessoa {
     }
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
+    //Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
     public static void Cardapios(String[] cardapio) {
         Scanner sc = new Scanner(System.in);
         System.out.println(" ======= Cardápio ======= ");

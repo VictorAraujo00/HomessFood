@@ -13,8 +13,7 @@ import homessfood.exceptions.ExcecaoLogin;
 
 public class Aplicacao {
 
-    static LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
-    static LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
+ 
     
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
@@ -30,10 +29,10 @@ public class Aplicacao {
         System.out.println("5. Sair");
     }
 
-    public static int posNaLista(Pessoa cozinheiroLogin) {
+    public static int posNaLista(Pessoa cozinheiroLogin, LinkedList lista) {
         int pos=0;
-        for (int i = 0; i < listaCozinheiros.size(); i++) {
-            if (listaCozinheiros.get(i) == cozinheiroLogin) {
+        for (int i = 0; i < lista.size(); i++) {
+            if (lista.get(i) == cozinheiroLogin) {
                 pos = i;
             }
         }
@@ -41,6 +40,11 @@ public class Aplicacao {
     }
 
     public static void main(String[] args) throws ExcecaoLogin {
+        RepositorioClientes rCliente= new RepositorioClientes();
+        RepositorioCozinheiros rCozinheiro = new RepositorioCozinheiros();
+        // LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
+        // LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
+
         Scanner sc = new Scanner(System.in);
         int op=0;
         //incialização do objeto Pessoa para chamar métodos das classes cozinheiros e cliente
@@ -58,56 +62,55 @@ public class Aplicacao {
             opcoes();
             op = sc.nextInt();
 
-          if (op == 1) {
-              Pessoa cozinheiroLogin = login.EntrarCozinheiro();
-              try{
-                    if(listaCozinheiros.contains(cozinheiroLogin)==false){
-                          throw new ExcecaoLogin();
-                      }
-                      else if(listaCozinheiros.contains(cozinheiroLogin)==true){
-                          System.out.println("Login efetuado com sucesso!");
-                           //achar posição do cozinheiro
-                        int pos = posNaLista(cozinheiroLogin); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
-                        cozinheiros.exibirTelaCozinheiro(pos);
-                       }
-                   }catch(ExcecaoLogin e){
-                      System.out.println("Usuário não corresponde /  Senha incorreta"); 
-                  }
+
+            if (op == 1) {
+            //   Pessoa cozinheiroLogin = login.EntrarCozinheiro();
+            //   try{
+            //         if(listaCozinheiros.contains(cozinheiroLogin)==false){
+            //               throw new ExcecaoLogin();
+            //           }
+            //           else if(listaCozinheiros.contains(cozinheiroLogin)==true){
+            //               System.out.println("Login efetuado com sucesso!");
+            //                //achar posição do cozinheiro
+            //             int pos = posNaLista(cozinheiroLogin, listaCozinheiros); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
+            //             cozinheiros.exibirTelaCozinheiro(pos);
+            //            }
+            //        }catch(ExcecaoLogin e){
+            //           System.out.println("Usuário não corresponde /  Senha incorreta"); 
+            //       }
               }
               else if (op== 2) {
-                  Pessoa novoCozinheiro = registro.CadastroCozinheiro();
-                  if(listaCozinheiros.contains(novoCozinheiro)){
-                      System.out.println("Usuário já cadastrado!");
-                  }
-                  else{
-                      listaCozinheiros.addLast(novoCozinheiro);
-                      System.out.println("Cadastro feito com sucesso!");
-                  }
+                //   Pessoa novoCozinheiro = registro.CadastroCozinheiro();
+                //   if(listaCozinheiros.contains(novoCozinheiro)){
+                //       System.out.println("Usuário já cadastrado!");
+                //   }
+                //   else{
+                //       listaCozinheiros.addLast(novoCozinheiro);
+                //       System.out.println("Cadastro feito com sucesso!");
+                //   }
               }
               else if (op == 3) {
-                  Pessoa clienteLogin = login.EntrarCliente();
-                  try{
-                  if(listaClientes.contains(clienteLogin)==false){
-                    throw new ExcecaoLogin();
-                  }
-                    else if(listaClientes.contains(clienteLogin)==true){
-                        System.out.println("Login efetuado com sucesso!");
-                        System.out.println(" ");
-                        cliente.opcoesTelaClientes(listaCozinheiros);
-                    }
-                 }catch(Exception e){
-                    System.out.println("Não temos cozinheiros disponíveis no momento.");
-                  }
+                //   Pessoa clienteLogin = login.EntrarCliente();
+                  
+                //   if(listaClientes.contains(clienteLogin)==false){
+                //     throw new ExcecaoLogin();
+                //   }
+                //     else if(listaClientes.contains(clienteLogin)==true){
+                //         System.out.println("Login efetuado com sucesso!");
+                //         System.out.println(" ");
+                //         cliente.opcoesTelaClientes(listaCozinheiros);
+                //     }
+               
               }
               else if (op== 4) {
-                  Pessoa novoCliente = registro.CadastroCliente();             
-                  if(listaClientes.contains(novoCliente)){
-                      System.out.println("Usuário já cadastrado!");
-                  }
-                  else{
-                      listaClientes.addLast(novoCliente);
-                      System.out.println("Cadastro feito com sucesso!");
-                  }
+                //   Pessoa novoCliente = registro.CadastroCliente();             
+                //   if(listaClientes.contains(novoCliente)){
+                //       System.out.println("Usuário já cadastrado!");
+                //   }
+                //   else{
+                //       listaClientes.addLast(novoCliente);
+                //       System.out.println("Cadastro feito com sucesso!");
+                //   }
               }
               else if (op == 5){
                   System.out.println("Você ficou offline");

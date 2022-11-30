@@ -7,10 +7,6 @@ import homessfood.interfaces.ICadastro;
 
 public class Registro extends Pessoa implements ICadastro{
 
-    private String nome="";
-    private String user="";
-    private int senha=0;
-    private Pessoa perfil = new Pessoa(nome, user, senha);
     Scanner sc = new Scanner(System.in);
     private String[] cardapio;
     private LinkedList<String[]> cardapios = new LinkedList<String[]>();
@@ -22,32 +18,42 @@ public class Registro extends Pessoa implements ICadastro{
     }
    
     public Pessoa CadastroCozinheiro() {
+        
         System.out.println("Digite seu nome de usuário: ");
-         nome = sc.nextLine(); 
-         perfil.setNome(nome);
+         String nome = sc.nextLine(); 
+         //perfil.setNome(nome);
          System.out.println("Digite uma senha numérica: ");
-         senha = sc.nextInt();
-         perfil.setSenha(senha);
-         user = "Cozinheiro";
-         perfil.setUser(user);
+         int senha = sc.nextInt();
+         //perfil.setSenha(senha);
+         String user = "Cozinheiro";
+         //perfil.setUser(user);
+         Pessoa perfil = new Pessoa(nome, user, senha);
          //Cardapio();
          System.out.println("Quantos pratos terá em seu cardápio? ");
          int quantidadeDeCardapios = sc.nextInt();
        
          setCardapio(cardapio, quantidadeDeCardapios);
          System.out.println("Digite seus pratos: ");
-         cardapio[0] = sc.nextLine();
+         getCardapio()[0] = sc.nextLine();
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              // System.out.println("coloque um pratinho");
               System.out.println((i+1)+ ": ");
-              cardapio[i] = sc.nextLine();
+              this.cardapio[i] = sc.nextLine();
           }
-         cardapios.addLast(cardapio);
+         getCardapios().addLast(this.cardapio);
          System.out.println(perfil.toString());
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
          }
          return perfil;
+     }
+
+     public LinkedList<String[]> getCardapios() {
+         return cardapios;
+     }
+
+     public void setCardapios(LinkedList<String[]> cardapios) {
+         this.cardapios = cardapios;
      }
 
      public static void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
@@ -61,13 +67,14 @@ public class Registro extends Pessoa implements ICadastro{
 
     public Pessoa CadastroCliente() {
         System.out.println("Digite seu nome de usuário: ");
-        nome = sc.nextLine();
-        perfil.setNome(nome);
+        String nome = sc.nextLine();
+       
         System.out.println("Digite uma senha numérica: ");
-        senha = sc.nextInt(); sc.nextLine();
-        perfil.setSenha(senha);
-        user = "Cliente";
-        perfil.setUser(user);
+        int senha = sc.nextInt(); sc.nextLine();
+       
+        String user = "Cliente";
+        
+        Pessoa perfil = new Pessoa(nome, user, senha);
         return perfil; //vai adicionar na lista! onde isso acontece?
     }
 

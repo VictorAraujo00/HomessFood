@@ -15,32 +15,36 @@ public class Cliente extends Pessoa implements ITCliente{
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
+    Registro registro = new Registro(nome, user, senha, null);
     
     public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
         int i=0;
         int size = listaCozinheiros.size();
+        
         if(size>=1){
-        for(i = 0; i < size; i++){
-            System.out.println(i+1 + ". " + listaCozinheiros.get(i));
+            for(i = 0; i < size; i++){
+                System.out.println(i+1 + ". " + listaCozinheiros.get(i));
+            }
         }
-       }
         else{
-         System.out.println("Não temos cozinheiros disponíveis no momento.");
+            System.out.println("Não temos cozinheiros disponíveis no momento.");
+            return;
         }
-        int quant = listaCozinheiros.size();
-        exibirTelaCliente(quant);
+        exibirTelaCliente(size);
     }
 
     public void exibirTelaCliente(int size){
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
+        int index=0;
+        System.out.println(registro.getCardapios().size());
 
-            for (int index = 0; index < size; index++) {
+            for (index = 0; index < size; index++) {
                 if (op == index+1) {
-                    Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
+                    Cozinheiros.Cardapios(registro.getCardapios().get(index));
                 }
                 else if (op >= size) {
                     return;
