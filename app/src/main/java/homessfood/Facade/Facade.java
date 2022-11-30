@@ -12,26 +12,24 @@ public class Facade implements IFacade {
 
     @Override
     public void loginClientes() throws Exception {
-        
+        rPessoas.loginClientes();
         
     }
 
     @Override
     public void loginCozinheiros() throws Exception {
-        
+        rPessoas.loginCozinheiros();
         
     }
 
     @Override
     public void cadastroClientes() {
-        
-        
+        rPessoas.cadastroClientes();
     }
 
     @Override
     public void cadastroCozinheiros() {
-        
-        
+        rPessoas.cadastroCozinheiros();
     }
     
 }
