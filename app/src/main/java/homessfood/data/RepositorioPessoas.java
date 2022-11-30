@@ -1,6 +1,7 @@
 package homessfood.data;
 
 import java.util.LinkedList;
+import java.util.Scanner;
 
 import homessfood.entities.Cliente;
 import homessfood.entities.Cozinheiros;
@@ -10,17 +11,30 @@ import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
 
 public class RepositorioPessoas implements IRepository  {
+
     LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
     LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
+
+    Scanner sc = new Scanner(System.in);
+    int op=0;
+    //incialização do objeto Pessoa para chamar métodos das classes cozinheiros e cliente
+    String nome="", user="";
+    int senha=0;
+    String[] cardapio = {};
+    //chamando objetos das classes
+    Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
+    Cliente cliente = new Cliente(nome, user, senha);
+    Registro registro = new Registro(nome, user, senha, cardapio);
+    Login login = new Login(nome, user, senha);
 
     public RepositorioPessoas() {
         this.listaClientes = new LinkedList<>();
     }
 
-    Login login;
-    Cliente cliente;
-    Registro registro;
-    Cozinheiros cozinheiros;
+    // Login login;
+    // Cliente cliente;
+    // Registro registro;
+    // Cozinheiros cozinheiros;
 
     public static int posNaLista(Pessoa cozinheiroLogin, LinkedList<Pessoa> lista) {
         int pos=0;
@@ -46,7 +60,7 @@ public class RepositorioPessoas implements IRepository  {
     }
 
     public void cadastroClientes(){
-        Pessoa novoCliente = registro.CadastroCliente();
+        Pessoa novoCliente = registro.CadastroCliente();             
           if(listaClientes.contains(novoCliente)){
                       System.out.println("Usuário já cadastrado!");
                   }
@@ -57,8 +71,8 @@ public class RepositorioPessoas implements IRepository  {
           }
 
           public void loginCozinheiros(){
+            Pessoa cozinheiroLogin = login.EntrarCozinheiro();
             try{
-                Pessoa cozinheiroLogin = login.EntrarCozinheiro();
                         if(listaCozinheiros.contains(cozinheiroLogin)==false){
                               throw new ExcecaoLogin();
                           }

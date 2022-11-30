@@ -1,11 +1,12 @@
 package homessfood.Facade;
 
+import homessfood.data.IRepository;
 import homessfood.data.RepositorioPessoas;
 
 
 public class Facade implements IFacade {
 
-    private RepositorioPessoas rPessoas;
+    private IRepository rPessoas;
 
     public Facade() {
         this.rPessoas = new RepositorioPessoas();

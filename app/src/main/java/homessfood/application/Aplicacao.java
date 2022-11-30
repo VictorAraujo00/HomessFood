@@ -15,7 +15,6 @@ import homessfood.exceptions.ExcecaoLogin;
 
 public class Aplicacao {
 
-    
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
         System.out.println("");
@@ -61,10 +60,8 @@ public class Aplicacao {
         do {
             opcoes();
             op = sc.nextInt();
-
-
             if (op == 1) {
-              Pessoa cozinheiroLogin = login.EntrarCozinheiro();
+            //   Pessoa cozinheiroLogin = login.EntrarCozinheiro();
              /*  try{
                     if(listaCozinheiros.contains(cozinheiroLogin)==false){
                           throw new ExcecaoLogin();
@@ -81,7 +78,7 @@ public class Aplicacao {
                   fachadaApp.loginCozinheiros();
               }
               else if (op== 2) {
-                  Pessoa novoCozinheiro = registro.CadastroCozinheiro();
+                //   Pessoa novoCozinheiro = registro.CadastroCozinheiro();
                   /*if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }
@@ -92,7 +89,7 @@ public class Aplicacao {
                   fachadaApp.cadastroCozinheiros();
               }
               else if (op == 3) {
-                  Pessoa clienteLogin = login.EntrarCliente();
+                  //Pessoa clienteLogin = login.EntrarCliente();
                   
                 //   if(listaClientes.contains(clienteLogin)==false){
                 //     throw new ExcecaoLogin();
@@ -106,7 +103,7 @@ public class Aplicacao {
                
               }
               else if (op== 4) {
-                  Pessoa novoCliente = registro.CadastroCliente();             
+                //   Pessoa novoCliente = registro.CadastroCliente();             
                 //   if(listaClientes.contains(novoCliente)){
                 //       System.out.println("Usuário já cadastrado!");
                 //   }
