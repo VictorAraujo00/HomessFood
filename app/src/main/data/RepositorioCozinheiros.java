@@ -15,6 +15,7 @@ public class RepositorioCozinheiros {
                        //achar posição do cozinheiro
                     int pos = posNaLista(cozinheiroLogin, listaCozinheiros); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
                     cozinheiros.exibirTelaCozinheiro(pos);
+                    //teste
                    }
                }catch(ExcecaoLogin e){
                   System.out.println("Usuário não corresponde /  Senha incorreta"); 
