@@ -9,9 +9,13 @@ import homessfood.entities.Pessoa;
 import homessfood.entities.Registro;
 import homessfood.exceptions.ExcecaoLogin;
 
-public class RepositorioPessoas  {
+public class RepositorioPessoas implements IRepository  {
     LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
     LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
+
+    public RepositorioPessoas() {
+        this.listaClientes = new LinkedList<>();
+    }
 
     Login login;
     Cliente cliente;
@@ -28,9 +32,7 @@ public class RepositorioPessoas  {
         return pos;
     }
 
-    public RepositorioPessoas() {
-        this.listaClientes = new LinkedList<>();
-    }
+
     public void loginClientes() throws ExcecaoLogin{
         Pessoa clienteLogin = login.EntrarCliente();
             if(listaClientes.contains(clienteLogin)==false){

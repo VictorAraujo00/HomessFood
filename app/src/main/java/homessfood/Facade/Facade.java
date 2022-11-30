@@ -2,6 +2,7 @@ package homessfood.Facade;
 
 import homessfood.data.RepositorioPessoas;
 
+
 public class Facade implements IFacade {
 
     private RepositorioPessoas rPessoas;
@@ -12,24 +13,24 @@ public class Facade implements IFacade {
 
     @Override
     public void loginClientes() throws Exception {
-        rPessoas.loginClientes();
+        this.rPessoas.loginClientes();
         
     }
 
     @Override
     public void loginCozinheiros() throws Exception {
-        rPessoas.loginCozinheiros();
+        this.rPessoas.loginCozinheiros();
         
     }
 
     @Override
     public void cadastroClientes() {
-        rPessoas.cadastroClientes();
+        this.rPessoas.cadastroClientes();
     }
 
     @Override
     public void cadastroCozinheiros() {
-        rPessoas.cadastroCozinheiros();
+        this.rPessoas.cadastroCozinheiros();
     }
     
 }

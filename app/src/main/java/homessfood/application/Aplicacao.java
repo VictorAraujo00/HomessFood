@@ -4,6 +4,8 @@ package homessfood.application;
 import java.util.LinkedList;
 import java.util.Scanner;
 
+import homessfood.Facade.Facade;
+import homessfood.data.RepositorioPessoas;
 import homessfood.entities.Cliente;
 import homessfood.entities.Cozinheiros;
 import homessfood.entities.Login;
@@ -13,7 +15,6 @@ import homessfood.exceptions.ExcecaoLogin;
 
 public class Aplicacao {
 
- 
     
     Scanner sc = new Scanner(System.in);
     public static void opcoes(){
@@ -39,7 +40,9 @@ public class Aplicacao {
         return pos;
     }
 
-    public static void main(String[] args) throws ExcecaoLogin {
+    public static void main(String[] args) throws Exception {
+        RepositorioPessoas novoRepositorio = new RepositorioPessoas();
+        Facade fachadaApp = new Facade();
         LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
         LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
         Scanner sc = new Scanner(System.in);
@@ -62,7 +65,7 @@ public class Aplicacao {
 
             if (op == 1) {
               Pessoa cozinheiroLogin = login.EntrarCozinheiro();
-              try{
+             /*  try{
                     if(listaCozinheiros.contains(cozinheiroLogin)==false){
                           throw new ExcecaoLogin();
                       }
@@ -74,40 +77,44 @@ public class Aplicacao {
                        }
                    }catch(ExcecaoLogin e){
                       System.out.println("Usuário não corresponde /  Senha incorreta"); 
-                  }
+                  } */
+                  fachadaApp.loginCozinheiros();
               }
               else if (op== 2) {
                   Pessoa novoCozinheiro = registro.CadastroCozinheiro();
-                  if(listaCozinheiros.contains(novoCozinheiro)){
+                  /*if(listaCozinheiros.contains(novoCozinheiro)){
                       System.out.println("Usuário já cadastrado!");
                   }
                   else{
                       listaCozinheiros.addLast(novoCozinheiro);
                       System.out.println("Cadastro feito com sucesso!");
-                  }
+                  }*/
+                  fachadaApp.cadastroCozinheiros();
               }
               else if (op == 3) {
                   Pessoa clienteLogin = login.EntrarCliente();
                   
-                  if(listaClientes.contains(clienteLogin)==false){
-                    throw new ExcecaoLogin();
-                  }
-                    else if(listaClientes.contains(clienteLogin)==true){
-                        System.out.println("Login efetuado com sucesso!");
-                        System.out.println(" ");
-                        cliente.opcoesTelaClientes(listaCozinheiros);
-                    }
+                //   if(listaClientes.contains(clienteLogin)==false){
+                //     throw new ExcecaoLogin();
+                //   }
+                //     else if(listaClientes.contains(clienteLogin)==true){
+                //         System.out.println("Login efetuado com sucesso!");
+                //         System.out.println(" ");
+                //         cliente.opcoesTelaClientes(listaCozinheiros);
+                //     }
+                fachadaApp.loginClientes();
                
               }
               else if (op== 4) {
                   Pessoa novoCliente = registro.CadastroCliente();             
-                  if(listaClientes.contains(novoCliente)){
-                      System.out.println("Usuário já cadastrado!");
-                  }
-                  else{
-                      listaClientes.addLast(novoCliente);
-                      System.out.println("Cadastro feito com sucesso!");
-                  }
+                //   if(listaClientes.contains(novoCliente)){
+                //       System.out.println("Usuário já cadastrado!");
+                //   }
+                //   else{
+                //       listaClientes.addLast(novoCliente);
+                //       System.out.println("Cadastro feito com sucesso!");
+                //   }
+                fachadaApp.cadastroClientes();
               }
               else if (op == 5){
                   System.out.println("Você ficou offline");
