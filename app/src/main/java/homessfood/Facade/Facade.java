@@ -4,7 +4,11 @@ import homessfood.data.RepositorioPessoas;
 
 public class Facade implements IFacade {
 
-    
+    private RepositorioPessoas rPessoas;
+
+    public Facade() {
+        this.rPessoas = new RepositorioPessoas();
+    }
 
     @Override
     public void loginClientes() throws Exception {
