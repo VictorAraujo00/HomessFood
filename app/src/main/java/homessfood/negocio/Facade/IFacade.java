@@ -1,4 +1,4 @@
-package homessfood.Facade;
+package homessfood.negocio.Facade;
 
 public interface IFacade {
     public void loginClientes() throws Exception;

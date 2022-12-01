@@ -1,6 +1,6 @@
-package homessfood.interfaces;
+package homessfood.negocio.interfaces;
 
-import homessfood.entities.Pessoa;
+import homessfood.negocio.entities.Pessoa;
 
 // interface cadastroCozinheiros
 public interface ICadastro {

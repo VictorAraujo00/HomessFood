@@ -1,4 +1,4 @@
-package homessfood.Facade;
+package homessfood.negocio.Facade;
 
 import homessfood.data.IRepository;
 import homessfood.data.RepositorioPessoas;

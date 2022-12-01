@@ -1,4 +1,4 @@
-package homessfood.entities;
+package homessfood.negocio.entities;
 
 public class AvaliacaoCozinheiro extends Cozinheiros{
 

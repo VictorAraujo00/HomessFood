@@ -1,4 +1,4 @@
-package homessfood.interfaces;
+package homessfood.negocio.interfaces;
 
 import java.util.LinkedList;
 

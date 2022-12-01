@@ -4,14 +4,14 @@ package homessfood.application;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.Facade.Facade;
 import homessfood.data.RepositorioPessoas;
-import homessfood.entities.Cliente;
-import homessfood.entities.Cozinheiros;
-import homessfood.entities.Login;
-import homessfood.entities.Pessoa;
-import homessfood.entities.Registro;
-import homessfood.exceptions.ExcecaoLogin;
+import homessfood.data.exceptions.ExcecaoLogin;
+import homessfood.negocio.Facade.Facade;
+import homessfood.negocio.entities.Cliente;
+import homessfood.negocio.entities.Cozinheiros;
+import homessfood.negocio.entities.Login;
+import homessfood.negocio.entities.Pessoa;
+import homessfood.negocio.entities.Registro;
 
 public class Aplicacao {
 

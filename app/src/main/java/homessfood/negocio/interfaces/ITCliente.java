@@ -1,7 +1,7 @@
-package homessfood.interfaces;
+package homessfood.negocio.interfaces;
 import java.util.LinkedList;
 
-import homessfood.entities.Pessoa;
+import homessfood.negocio.entities.Pessoa;
 
 public interface ITCliente {
     void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros);

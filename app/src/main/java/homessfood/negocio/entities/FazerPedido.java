@@ -1,4 +1,4 @@
-package homessfood.entities;
+package homessfood.negocio.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;

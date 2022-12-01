@@ -1,4 +1,4 @@
-package homessfood.exceptions;
+package homessfood.data.exceptions;
 
 public class ExcecaoLogin extends Exception{
     public ExcecaoLogin(){

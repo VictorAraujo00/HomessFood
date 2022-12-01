@@ -3,12 +3,12 @@ package homessfood.data;
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.entities.Cliente;
-import homessfood.entities.Cozinheiros;
-import homessfood.entities.Login;
-import homessfood.entities.Pessoa;
-import homessfood.entities.Registro;
-import homessfood.exceptions.ExcecaoLogin;
+import homessfood.data.exceptions.ExcecaoLogin;
+import homessfood.negocio.entities.Cliente;
+import homessfood.negocio.entities.Cozinheiros;
+import homessfood.negocio.entities.Login;
+import homessfood.negocio.entities.Pessoa;
+import homessfood.negocio.entities.Registro;
 
 public class RepositorioPessoas implements IRepository  {
 

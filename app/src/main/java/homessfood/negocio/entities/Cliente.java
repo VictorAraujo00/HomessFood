@@ -1,9 +1,9 @@
-package homessfood.entities;
+package homessfood.negocio.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.interfaces.ITCliente;
+import homessfood.negocio.interfaces.ITCliente;
 public class Cliente extends Pessoa implements ITCliente{  
 
     public Cliente(String nome, String user, int senha) {

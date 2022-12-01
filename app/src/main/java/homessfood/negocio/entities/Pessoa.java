@@ -1,4 +1,4 @@
-package homessfood.entities;
+package homessfood.negocio.entities;
 
 public class Pessoa {
     //atributos que cliente e cozinheiros tem em comum

@@ -1,9 +1,9 @@
-package homessfood.entities;
+package homessfood.negocio.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
 
-import homessfood.interfaces.ICadastro;
+import homessfood.negocio.interfaces.ICadastro;
 
 public class Registro extends Pessoa implements ICadastro{
 
