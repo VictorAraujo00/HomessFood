@@ -14,8 +14,8 @@ public class PagamentoCartao implements PagamentoStrategy {
         return false;
     }
     public void pagamentos(float quantia){
-        System.out.println("pagamento de"+ quantia + "udsando o seu cartão de crédito");
-        //cartao.setQuantia(cartao.getQuantia() - quantia);
+        System.out.println("Pagamento de"+ quantia + "usando o seu cartão de crédito");
+        cartao.setQuantia(cartao.getQuantia() - quantia);
     }
 
 }
