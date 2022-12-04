@@ -43,7 +43,7 @@ public class FazerPedido {
         return this.mediaAvaliacao;
     }
 
-    public String EscolhadoItemCardapio(String[] cardapio, int indescolhido){
+    public String EscolhidoItemCardapio(String[] cardapio, int indescolhido){
         int i;
         for(i=0; i< cardapio.length;i++){
             if(indescolhido==i+1){
@@ -57,7 +57,7 @@ public class FazerPedido {
         System.out.println(" ========================== ");
         System.out.println("PEDIDOS REALIZADOS: ");
         if (pedidosRecebidos.isEmpty()) {
-            System.out.println("Você ainda não recebeu nenhum pedido ");
+            System.out.println("Você ainda não recebeu nenhum pedido");
             return;
         } else {
             System.out.println(pedidosRecebidos.toString());

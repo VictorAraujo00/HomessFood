@@ -72,7 +72,7 @@ public class Cozinheiros extends Pessoa {
         System.out.println(" ");
         System.out.println("ESCOLHA O SEU PEDIDO: ");
         indescolhido = sc.nextInt(); 
-        String comida = pedido.EscolhadoItemCardapio(cardapio, indescolhido);
+        String comida = pedido.EscolhidoItemCardapio(cardapio, indescolhido);
         System.out.println("Você escolheu " + comida);
         FazerPedido.pedidosFeitos.addLast(comida);
         //obs: por enquanto os pedidos aparecem pra todos os cozinheiros; 
@@ -85,7 +85,7 @@ public class Cozinheiros extends Pessoa {
     }
     
     public String getItemEscolhidoDoCardapio(){
-       String itemEscolhido= pedido.EscolhadoItemCardapio(cardapio, indescolhido);
+       String itemEscolhido= pedido.EscolhidoItemCardapio(cardapio, indescolhido);
         return itemEscolhido; 
     }
 
