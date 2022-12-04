@@ -10,15 +10,12 @@ public class PagamentoCartao implements PagamentoStrategy {
         cartao = new Cartao("numero do cartao", "dataExpiracao","cvv");
     }
     public boolean validacao(){
+        //validar o catao de crédito
         return false;
     }
-    public void pagamentos(int amount){
-
-    }
-    @Override
-    public void dadosDoPagamentoZ() {
-        // TODO Auto-generated method stub
-        
+    public void pagamentos(float quantia){
+        System.out.println("pagamento de"+ quantia + "udsando o seu cartão de crédito");
+        //cartao.setQuantia(cartao.getQuantia() - quantia);
     }
 
 }
