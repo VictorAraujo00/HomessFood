@@ -15,7 +15,7 @@ public class Cozinheiros extends Pessoa {
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    Registro registro = new Registro(nome, user, senha, cardapio, null);
+    Registro registro = new Registro(nome, user, senha, cardapio);
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -28,6 +28,21 @@ public class Cozinheiros extends Pessoa {
         System.out.println("Escolha uma opção:");
         System.out.println("1- Visualizar quantos pedidos foram realizados");
         System.out.println("2- Voltar");
+    }
+
+    public void exibirTelaCozinheiro(int pos){
+        opcoesTelaCozinheiros();
+        System.out.println(" ========================== ");
+        int op = sc.nextInt();
+
+        if (op == 1) {
+            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
+            FazerPedido.receberPedidos(pedidosRecebidos);
+            return;
+        }
+        else if (op == 2){
+            return; 
+        } 
     }
 
     public LinkedList<String> encontrarPedidos (int pos) {
@@ -43,22 +58,6 @@ public class Cozinheiros extends Pessoa {
                 System.out.println("Não possui nenhum pedido no momento");
             }
         return pedidosRecebidos;
-    }
-     
-
-    public void exibirTelaCozinheiro(int pos){
-        opcoesTelaCozinheiros();
-        System.out.println(" ========================== ");
-        int op = sc.nextInt();
-
-        if (op == 1) {
-            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
-            FazerPedido.receberPedidos(pedidosRecebidos);
-            return;
-        }
-        else if (op == 2){
-            return; 
-        } 
     }
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
@@ -84,7 +83,6 @@ public class Cozinheiros extends Pessoa {
     public void exibirPedidosFeitos(){
             System.out.println(getItemEscolhidoDoCardapio());
     }
-
     
     public String getItemEscolhidoDoCardapio(){
        String itemEscolhido= pedido.EscolhadoItemCardapio(cardapio, indescolhido);

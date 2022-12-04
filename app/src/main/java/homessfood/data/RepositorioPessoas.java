@@ -25,7 +25,7 @@ public class RepositorioPessoas implements IRepository  {
     //chamando objetos das classes
     Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
     Cliente cliente = new Cliente(nome, user, senha);
-    Registro registro = new Registro(nome, user, senha, cardapio, null);
+    Registro registro = new Registro(nome, user, senha, cardapio);
     Login login = new Login(nome, user, senha);
 
     public RepositorioPessoas() {
