@@ -41,7 +41,8 @@ public class Cliente extends Pessoa implements ITCliente{
         int op = sc.nextInt();
         int index=0;
         System.out.println(registro.getCardapios().size());
-
+        int sizeCardapios = registro.getCardapios().size();
+        if(sizeCardapios>=1){
             for (index = 0; index < size; index++) {
                 if (op == index+1) {
                     Cozinheiros.Cardapios(registro.getCardapios().get(index));
@@ -50,6 +51,12 @@ public class Cliente extends Pessoa implements ITCliente{
                     return;
                 }
             }
+        }
+        else{
+            System.out.println("Não temos cardápios disponíveis no momento.");
+            return;
+        }
+           
 
     }
 

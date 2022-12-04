@@ -9,7 +9,7 @@ public class Registro extends Pessoa implements ICadastro{
 
     Scanner sc = new Scanner(System.in);
     private String[] cardapio;
-    private LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    LinkedList<String[]> cardapios = new LinkedList<String[]>();
 
     public Registro(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -34,7 +34,7 @@ public class Registro extends Pessoa implements ICadastro{
        
          setCardapio(cardapio, quantidadeDeCardapios);
          System.out.println("Digite seus pratos: ");
-         getCardapio()[0] = sc.nextLine();
+         this.cardapio[0] = sc.nextLine();
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              // System.out.println("coloque um pratinho");
               System.out.println((i+1)+ ": ");
@@ -49,7 +49,7 @@ public class Registro extends Pessoa implements ICadastro{
      }
 
      public LinkedList<String[]> getCardapios() {
-         return cardapios;
+         return this.cardapios;
      }
 
      public void setCardapios(LinkedList<String[]> cardapios) {

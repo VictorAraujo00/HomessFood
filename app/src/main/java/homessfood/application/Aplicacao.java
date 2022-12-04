@@ -63,21 +63,20 @@ public class Aplicacao {
             if (op == 1) {
                   fachadaApp.loginCozinheiros();
               }
-              else if (op== 2) {
+              else if (op == 2) {
                   fachadaApp.cadastroCozinheiros();
               }
               else if (op == 3) {
                 fachadaApp.loginClientes();
               }
               else if (op== 4) {
-              
                 fachadaApp.cadastroClientes();
               }
               else if (op == 5){
                   System.out.println("Você ficou offline");
                   return; 
               }
-          } while (op !=5);
+          } while (op != 5);
     }
     }
 
