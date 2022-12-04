@@ -42,7 +42,7 @@ public class Cliente extends Pessoa implements ITCliente{
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
-        int index=0;
+        int index=0, teste=0;
         int sizeCardapios = cardapios.size();
       
         if(sizeCardapios>=1){
