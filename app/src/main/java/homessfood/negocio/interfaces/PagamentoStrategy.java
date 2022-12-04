@@ -1,7 +1,7 @@
 package homessfood.negocio.interfaces;
 
 public interface PagamentoStrategy {
-    void dadosDoPagamento();
+    void CZ();
     //para a validação dos dados colocados
     boolean validacao();
     //quantia
