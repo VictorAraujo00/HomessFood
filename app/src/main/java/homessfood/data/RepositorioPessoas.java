@@ -1,5 +1,6 @@
 package homessfood.data;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -24,7 +25,7 @@ public class RepositorioPessoas implements IRepository  {
     //chamando objetos das classes
     Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, cardapio);
     Cliente cliente = new Cliente(nome, user, senha);
-    Registro registro = new Registro(nome, user, senha, cardapio);
+    Registro registro = new Registro(nome, user, senha, cardapio, null);
     Login login = new Login(nome, user, senha);
 
     public RepositorioPessoas() {
@@ -36,10 +37,10 @@ public class RepositorioPessoas implements IRepository  {
     // Registro registro;
     // Cozinheiros cozinheiros;
 
-    public static int posNaLista(Pessoa cozinheiroLogin, LinkedList<Pessoa> lista) {
+    public static int posNaLista(Pessoa cozinheiro, LinkedList<Pessoa> listaCozinheiro) {
         int pos=0;
-        for (int i = 0; i < lista.size(); i++) {
-            if (lista.get(i) == cozinheiroLogin) {
+        for (int i = 0; i < listaCozinheiro.size(); i++) {
+            if (listaCozinheiro.get(i) == cozinheiro) {
                 pos = i;
             }
         }
@@ -55,7 +56,7 @@ public class RepositorioPessoas implements IRepository  {
                     else if(listaClientes.contains(clienteLogin)==true){
                         System.out.println("Login efetuado com sucesso!");
                         System.out.println(" ");
-                        cliente.opcoesTelaClientes(listaCozinheiros);
+                        cliente.opcoesTelaClientes(listaCozinheiros, registro.getCardapios());
                     }
     }
 
@@ -93,6 +94,7 @@ public class RepositorioPessoas implements IRepository  {
                         }
                         else{
                             listaCozinheiros.addLast(novoCozinheiro);
+                            ArrayList<String[]> cardapios = registro.criarCardapio(novoCozinheiro);
                             System.out.println("Cadastro feito com sucesso!");
                         }
             }

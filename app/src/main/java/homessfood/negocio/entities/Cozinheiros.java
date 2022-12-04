@@ -15,7 +15,7 @@ public class Cozinheiros extends Pessoa {
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    Registro registro = new Registro(nome, user, senha, cardapio);
+    Registro registro = new Registro(nome, user, senha, cardapio, null);
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);

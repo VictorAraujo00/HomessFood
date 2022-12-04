@@ -16,9 +16,10 @@ public class Cliente extends Pessoa implements ITCliente{
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
-    Registro registro = new Registro(nome, user, senha, null);
+    //ArrayList<String[]> cardapios = Registro.getCardapios();
+    //Registro registro = new Registro(nome, user, senha, null);
     
-    public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros){
+    public void opcoesTelaClientes(LinkedList<Pessoa> listaCozinheiros, ArrayList<String[]> cardapios){
         System.out.println("========= Escolha um cozinheiro ========");
         System.out.println();
         int i=0;
@@ -33,15 +34,14 @@ public class Cliente extends Pessoa implements ITCliente{
             System.out.println("Não temos cozinheiros disponíveis no momento.");
             return;
         }
-        exibirTelaCliente(size);
+        exibirTelaCliente(size, cardapios);
     }
 
-    public void exibirTelaCliente(int size){
+    public void exibirTelaCliente(int size, ArrayList<String[]> cardapios){
         Scanner sc = new Scanner(System.in);
         System.out.println(" ");
         int op = sc.nextInt();
         int index=0;
-        ArrayList<String[]> cardapios = registro.getCardapios();
         System.out.println(cardapios.size());
         int sizeCardapios = cardapios.size();
       

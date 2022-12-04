@@ -12,9 +12,10 @@ public class Registro extends Pessoa implements ICadastro{
     private String[] cardapio;
     ArrayList<String[]> cardapios = new ArrayList<String[]>();
 
-    public Registro(String nome, String user, int senha, String[] cardapio) {
+    public Registro(String nome, String user, int senha, String[] cardapio, ArrayList<String[]> cardapios) {
         super(nome, user, senha);
         this.cardapio = new String[4];
+        this.cardapios = cardapios;
         //this.avaliacao=avaliacao;
     }
    
@@ -30,31 +31,36 @@ public class Registro extends Pessoa implements ICadastro{
          //perfil.setUser(user);
          Pessoa perfil = new Pessoa(nome, user, senha);
          //Cardapio();
-         System.out.println("Quantos pratos terá em seu cardápio? ");
-         int quantidadeDeCardapios = sc.nextInt();
-       
-         setCardapio(cardapio, quantidadeDeCardapios);
-         System.out.println("Digite seus pratos: ");
-         this.cardapio[0] = sc.nextLine();
-         for (int i = 0; i < quantidadeDeCardapios; i++) {
-             // System.out.println("coloque um pratinho");
-              System.out.println((i+1)+ ": ");
-              this.cardapio[i] = sc.nextLine();
-          }
-         getCardapios().add(this.cardapio);
-         System.out.println(perfil.toString());
-         for (int i = 0; i < quantidadeDeCardapios; i++) {
-             System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
-         }
          return perfil;
+     }
+
+     public ArrayList<String[]> criarCardapio(Pessoa perfil) {
+        System.out.println("Quantos pratos terá em seu cardápio? ");
+        int quantidadeDeCardapios = sc.nextInt();
+        System.out.println("Digite seus pratos: ");
+        this.cardapio[0] = sc.nextLine();
+        for (int i = 0; i < quantidadeDeCardapios; i++) {
+            // System.out.println("coloque um pratinho");
+             System.out.println((i+1)+ ": ");
+             this.cardapio[i] = sc.nextLine();
+         }
+        //getCardapios().add(this.cardapio);
+        setCardapios(getCardapios(), this.cardapio);
+        System.out.println(perfil.toString());
+        for (int i = 0; i < quantidadeDeCardapios; i++) {
+            System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
+        }
+        setCardapio(cardapio, quantidadeDeCardapios);
+        return getCardapios();
      }
 
      public ArrayList<String[]> getCardapios() {
          return this.cardapios;
      }
 
-     public void setCardapios(ArrayList<String[]> cardapios) {
-         this.cardapios = cardapios;
+     public void setCardapios(ArrayList<String[]> cardapios, String[] cardapioo) {
+         //this.cardapios = cardapios;
+         cardapios.add(cardapioo);
      }
 
      public static void setCardapio(String[] cardapio, int quantidadeDeCardapios) {
