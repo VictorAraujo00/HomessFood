@@ -1,5 +1,6 @@
 package homessfood.negocio.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -10,9 +11,9 @@ public class FazerPedido {
     private int avaliacao; 
     private float mediaAvaliacao;//fazer calculo de média, só vai adiconar, não aparece a avaliação individual; e será feita após o pedido (perguntando se foi recebido)
     private String pedido;
-    LinkedList<String> pedidosFeitos = new LinkedList<String>();
+    ArrayList<String> pedidosFeitos = new ArrayList<String>();
 
-    public FazerPedido(LinkedList<String> pedidosFeitos){
+    public FazerPedido(ArrayList<String> pedidosFeitos){
         this.quantPedidos=quantPedidos;
         this.avaliacao=avaliacao;
         this.mediaAvaliacao=mediaAvaliacao;
