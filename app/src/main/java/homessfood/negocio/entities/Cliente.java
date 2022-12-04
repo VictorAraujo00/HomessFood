@@ -16,6 +16,7 @@ public class Cliente extends Pessoa implements ITCliente{
     String nome="", user="";
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
+    Cozinheiros cozinheiros = new Cozinheiros(nome, user, senha, null);
     //ArrayList<String[]> cardapios = Registro.getCardapios();
     //Registro registro = new Registro(nome, user, senha, null);
     
@@ -42,13 +43,12 @@ public class Cliente extends Pessoa implements ITCliente{
         System.out.println(" ");
         int op = sc.nextInt();
         int index=0;
-        System.out.println(cardapios.size());
         int sizeCardapios = cardapios.size();
       
         if(sizeCardapios>=1){
             for (index = 0; index < size; index++) {
                 if (op == index+1) {
-                    Cozinheiros.Cardapios(cardapios.get(index));
+                    cozinheiros.Cardapios(cardapios.get(index));
                 }
                 else if (op >= size) {
                     return;

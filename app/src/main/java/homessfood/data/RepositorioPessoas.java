@@ -15,6 +15,7 @@ public class RepositorioPessoas implements IRepository  {
 
     LinkedList<Pessoa> listaClientes = new LinkedList<Pessoa>();
     LinkedList<Pessoa> listaCozinheiros = new LinkedList<Pessoa>();
+    public ArrayList<String[]> cardapios = new ArrayList<>();
 
     Scanner sc = new Scanner(System.in);
     int op=0;
@@ -30,6 +31,11 @@ public class RepositorioPessoas implements IRepository  {
 
     public RepositorioPessoas() {
         this.listaClientes = new LinkedList<>();
+        this.cardapios = cardapios;
+    }
+
+    public void setCardapios(ArrayList<String[]> cardapios) {
+        this.cardapios = cardapios;
     }
 
     // Login login;
@@ -81,7 +87,7 @@ public class RepositorioPessoas implements IRepository  {
                               System.out.println("Login efetuado com sucesso!");
                                //achar posição do cozinheiro
                             int pos = posNaLista(cozinheiroLogin, listaCozinheiros); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
-                            cozinheiros.exibirTelaCozinheiro(pos);
+                            cozinheiros.exibirTelaCozinheiro(pos, cardapios);
                            }
                        }catch(ExcecaoLogin e){
                           System.out.println("Usuário não corresponde /  Senha incorreta"); 
@@ -94,7 +100,8 @@ public class RepositorioPessoas implements IRepository  {
                         }
                         else{
                             listaCozinheiros.addLast(novoCozinheiro);
-                            ArrayList<String[]> cardapios = registro.criarCardapio(novoCozinheiro);
+                            setCardapios(registro.criarCardapio(novoCozinheiro));
+                            //cardapios = registro.criarCardapio(novoCozinheiro);
                             System.out.println("Cadastro feito com sucesso!");
                         }
             }

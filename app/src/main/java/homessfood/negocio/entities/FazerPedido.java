@@ -10,17 +10,26 @@ public class FazerPedido {
     private int avaliacao; 
     private float mediaAvaliacao;//fazer calculo de média, só vai adiconar, não aparece a avaliação individual; e será feita após o pedido (perguntando se foi recebido)
     private String pedido;
-    static LinkedList<String> pedidosFeitos = new LinkedList<String>();
+    LinkedList<String> pedidosFeitos = new LinkedList<String>();
 
-    public FazerPedido(){
+    public FazerPedido(LinkedList<String> pedidosFeitos){
         this.quantPedidos=quantPedidos;
         this.avaliacao=avaliacao;
         this.mediaAvaliacao=mediaAvaliacao;
         this.pedido=pedido;
+        this.pedidosFeitos = pedidosFeitos;
     }
 
     public void setAvaliacao(int avaliacao) {
         this.avaliacao = avaliacao;
+    }
+
+    public LinkedList<String> getPedidosFeitos() {
+        return this.pedidosFeitos;
+    }
+
+    public void setPedidosFeitos(LinkedList<String> pedidosFeitos) {
+        this.pedidosFeitos = pedidosFeitos;
     }
 
     public void setQuantPedidos(int quantPedidos) {
@@ -53,7 +62,7 @@ public class FazerPedido {
         return pedido;
     }
 
-    public static void receberPedidos(LinkedList<String> pedidosRecebidos){
+    public void receberPedidos(LinkedList<String> pedidosRecebidos){
         System.out.println(" ========================== ");
         System.out.println("PEDIDOS REALIZADOS: ");
         if (pedidosRecebidos.isEmpty()) {

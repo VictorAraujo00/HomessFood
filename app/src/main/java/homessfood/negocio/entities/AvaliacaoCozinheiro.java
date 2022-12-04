@@ -6,7 +6,7 @@ public class AvaliacaoCozinheiro extends Cozinheiros{
         super(nome, user, senha, cardapio);
     }
     private String[] cardapio;
-    private FazerPedido pedido;
+    FazerPedido pedido = new FazerPedido();
     private float avaliacao; 
     private float mediaAvaliacao;//media das avaliacoes
     private int quantidadeDeAvaliacoes;
@@ -28,7 +28,7 @@ public class AvaliacaoCozinheiro extends Cozinheiros{
     }
     
     public String getItemEscolhidoDoCardapio(){
-       String itemEscolhido= pedido.EscolhadoItemCardapio(cardapio, indescolhido);
+       String itemEscolhido= pedido.EscolhidoItemCardapio(cardapio, indescolhido);
         return itemEscolhido; 
     }
 
