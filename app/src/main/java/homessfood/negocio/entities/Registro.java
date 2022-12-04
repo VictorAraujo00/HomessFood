@@ -18,6 +18,10 @@ public class Registro extends Pessoa implements ICadastro{
         this.cardapios = cardapios;
         //this.avaliacao=avaliacao;
     }
+
+    public void setIndex(int index){
+        this.cardapio = new String[index];
+    }
    
     public Pessoa CadastroCozinheiro() {
         
@@ -37,6 +41,7 @@ public class Registro extends Pessoa implements ICadastro{
      public ArrayList<String[]> criarCardapio(Pessoa perfil) {
         System.out.println("Quantos pratos terá em seu cardápio? ");
         int quantidadeDeCardapios = sc.nextInt();
+        setIndex(quantidadeDeCardapios);
         setCardapio(cardapio, quantidadeDeCardapios);
         System.out.println("Digite seus pratos: ");
         this.cardapio[0] = sc.nextLine();
