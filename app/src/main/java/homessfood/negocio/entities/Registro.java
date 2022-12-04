@@ -51,17 +51,19 @@ public class Registro extends Pessoa implements ICadastro{
 
              this.cardapio[i] = sc.nextLine();
          }
-        //getCardapios().add(this.cardapio);
+        //getCardapios().add(this.cardapio);s
         setCardapios(getCardapios(), this.cardapio);
+
         System.out.println(perfil.toString());
         for (int i = 0; i < quantidadeDeCardapios; i++) {
             System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
         }
-        return this.cardapios;
+
+        return cardapios;
      }
 
      public ArrayList<String[]> getCardapios() {
-         return this.cardapios;
+         return cardapios;
      }
 
      public void setCardapios(ArrayList<String[]> cardapios, String[] cardapioo) {
