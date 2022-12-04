@@ -56,6 +56,8 @@ public class RepositorioPessoas implements IRepository  {
 
     public void loginClientes() throws ExcecaoLogin{
         Pessoa clienteLogin = login.EntrarCliente();
+
+        try{
             if(listaClientes.contains(clienteLogin)==false){
                     throw new ExcecaoLogin();
                 }
@@ -64,6 +66,11 @@ public class RepositorioPessoas implements IRepository  {
                         System.out.println(" ");
                         cliente.opcoesTelaClientes(listaCozinheiros, registro.getCardapios());
                     }
+                }catch(ExcecaoLogin e){
+                    System.out.println("Usuário não corresponde /  Senha incorreta");
+                }
+
+
     }
 
     public void cadastroClientes(){
