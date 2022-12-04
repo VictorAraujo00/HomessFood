@@ -1,5 +1,6 @@
 package homessfood.negocio.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -16,6 +17,7 @@ public class Cozinheiros extends Pessoa {
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
     Registro registro = new Registro(nome, user, senha, cardapio);
+    FazerPedido fazerpedido = new FazerPedido(pedidosFeitos);
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -30,14 +32,14 @@ public class Cozinheiros extends Pessoa {
         System.out.println("2- Voltar");
     }
 
-    public void exibirTelaCozinheiro(int pos){
+    public void exibirTelaCozinheiro(int pos, ArrayList<String[]> cardapios){
         opcoesTelaCozinheiros();
         System.out.println(" ========================== ");
         int op = sc.nextInt();
 
         if (op == 1) {
-            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
-            FazerPedido.receberPedidos(pedidosRecebidos);
+            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos, cardapios);
+            fazerpedido.receberPedidos(pedidosRecebidos);
             return;
         }
         else if (op == 2){
@@ -45,12 +47,13 @@ public class Cozinheiros extends Pessoa {
         } 
     }
 
-    public LinkedList<String> encontrarPedidos (int pos) {
+    public LinkedList<String> encontrarPedidos (int pos, ArrayList<String[]> cardapios) {
         LinkedList<String> pedidosRecebidos = new LinkedList<String>();
+        System.out.println(registro.getCardapios().size());
         String[] cardapioDesseCozinheiro = registro.getCardapios().get(pos);
         int index;
             for (index = 0; index < cardapioDesseCozinheiro.length; index++) {
-                if (FazerPedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
+                if (fazerpedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
                     pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
                 }
             } 
@@ -62,7 +65,7 @@ public class Cozinheiros extends Pessoa {
 
     //essa tela será exibida para o cliente após escolher o cozinheiro
     //Cozinheiros.Cardapios(Cozinheiros.cardapios.get(index));
-    public static void Cardapios(String[] cardapio) {
+    public void Cardapios(String[] cardapio) {
         Scanner sc = new Scanner(System.in);
         System.out.println(" ======= Cardápio ======= ");
         for (int i = 0; i < cardapio.length; i++) {
@@ -74,7 +77,7 @@ public class Cozinheiros extends Pessoa {
         indescolhido = sc.nextInt(); 
         String comida = pedido.EscolhidoItemCardapio(cardapio, indescolhido);
         System.out.println("Você escolheu " + comida);
-        FazerPedido.pedidosFeitos.addLast(comida);
+        fazerpedido.getPedidosFeitos().addLast(comida);
         //obs: por enquanto os pedidos aparecem pra todos os cozinheiros; 
         //pode colocar uma condição de se cardapio contain comida, vai aparecer, caso contrário é mensagem de que n recebeu pedidos
         pedido.Avaliacao(); 
