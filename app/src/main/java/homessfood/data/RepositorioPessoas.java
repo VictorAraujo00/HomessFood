@@ -94,7 +94,7 @@ public class RepositorioPessoas implements IRepository  {
                               System.out.println("Login efetuado com sucesso!");
                                //achar posição do cozinheiro
                             int pos = posNaLista(cozinheiroLogin, listaCozinheiros); //para que o cardapio corresponda ao cozinheiro, devemos salvar sua pos na lista
-                            cozinheiros.exibirTelaCozinheiro(pos, cardapios);
+                            cozinheiros.exibirTelaCozinheiro(pos);
                            }
                        }catch(ExcecaoLogin e){
                           System.out.println("Usuário não corresponde /  Senha incorreta"); 
