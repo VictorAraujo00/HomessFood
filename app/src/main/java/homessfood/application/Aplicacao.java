@@ -62,20 +62,20 @@ public class Aplicacao {
             op = sc.nextInt();
             if (op == 1) {
                   fachadaApp.loginCozinheiros();
-              }
-              else if (op == 2) {
-                  fachadaApp.cadastroCozinheiros();
-              }
-              else if (op == 3) {
+            }
+            else if (op == 2) {
+                fachadaApp.cadastroCozinheiros();
+            }
+            else if (op == 3) {
                 fachadaApp.loginClientes();
-              }
-              else if (op== 4) {
+            }
+            else if (op== 4) {
                 fachadaApp.cadastroClientes();
-              }
-              else if (op == 5){
-                  System.out.println("Você ficou offline");
-                  return; 
-              }
+            }
+            else if (op == 5){
+                System.out.println("Você ficou offline");
+                return; 
+            }
           } while (op != 5);
     }
     }

@@ -2,6 +2,7 @@ package homessfood.negocio.entities;
 
 import java.util.LinkedList;
 import java.util.Scanner;
+import java.util.ArrayList;
 
 import homessfood.negocio.interfaces.ICadastro;
 
@@ -9,7 +10,7 @@ public class Registro extends Pessoa implements ICadastro{
 
     Scanner sc = new Scanner(System.in);
     private String[] cardapio;
-    LinkedList<String[]> cardapios = new LinkedList<String[]>();
+    ArrayList<String[]> cardapios = new ArrayList<String[]>();
 
     public Registro(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
@@ -40,7 +41,7 @@ public class Registro extends Pessoa implements ICadastro{
               System.out.println((i+1)+ ": ");
               this.cardapio[i] = sc.nextLine();
           }
-         getCardapios().addLast(this.cardapio);
+         getCardapios().add(this.cardapio);
          System.out.println(perfil.toString());
          for (int i = 0; i < quantidadeDeCardapios; i++) {
              System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
@@ -48,11 +49,11 @@ public class Registro extends Pessoa implements ICadastro{
          return perfil;
      }
 
-     public LinkedList<String[]> getCardapios() {
+     public ArrayList<String[]> getCardapios() {
          return this.cardapios;
      }
 
-     public void setCardapios(LinkedList<String[]> cardapios) {
+     public void setCardapios(ArrayList<String[]> cardapios) {
          this.cardapios = cardapios;
      }
 

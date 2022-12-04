@@ -1,5 +1,6 @@
 package homessfood.negocio.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -40,12 +41,14 @@ public class Cliente extends Pessoa implements ITCliente{
         System.out.println(" ");
         int op = sc.nextInt();
         int index=0;
-        System.out.println(registro.getCardapios().size());
-        int sizeCardapios = registro.getCardapios().size();
+        ArrayList<String[]> cardapios = registro.getCardapios();
+        System.out.println(cardapios.size());
+        int sizeCardapios = cardapios.size();
+      
         if(sizeCardapios>=1){
             for (index = 0; index < size; index++) {
                 if (op == index+1) {
-                    Cozinheiros.Cardapios(registro.getCardapios().get(index));
+                    Cozinheiros.Cardapios(cardapios.get(index));
                 }
                 else if (op >= size) {
                     return;
