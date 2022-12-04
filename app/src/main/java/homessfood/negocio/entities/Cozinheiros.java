@@ -1,5 +1,6 @@
 package homessfood.negocio.entities;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Scanner;
 
@@ -16,12 +17,14 @@ public class Cozinheiros extends Pessoa {
     int senha=0;
     Pessoa perfil = new Pessoa(nome, user, senha);
     Registro registro = new Registro(nome, user, senha, cardapio);
-    FazerPedido fazerpedido = new FazerPedido(null);
+    FazerPedido fazerpedido = new FazerPedido();
     
     public Cozinheiros(String nome, String user, int senha, String[] cardapio) {
         super(nome, user, senha);
         this.cardapio = new String[4];
-        this.pedido = pedido;
+        ArrayList<String> pedidosFeitos = new ArrayList<>();
+        //pedidosFeitos.add(pedido);
+        this.pedido = new FazerPedido();
     }
     
 
@@ -37,7 +40,7 @@ public class Cozinheiros extends Pessoa {
         int op = sc.nextInt();
 
         if (op == 1) {
-            LinkedList<String> pedidosRecebidos= encontrarPedidos(pos);
+            ArrayList<String> pedidosRecebidos= encontrarPedidos(pos);
             fazerpedido.receberPedidos(pedidosRecebidos);
             return;
         }
@@ -46,18 +49,24 @@ public class Cozinheiros extends Pessoa {
         } 
     }
 
-    public LinkedList<String> encontrarPedidos (int pos) {
-        LinkedList<String> pedidosRecebidos = new LinkedList<String>();
-        String[] cardapioDesseCozinheiro = registro.getCardapios().get(pos);
-        int index;
-            for (index = 0; index == cardapioDesseCozinheiro.length; index++) {
-                if (fazerpedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
-                    pedidosRecebidos.addLast(cardapioDesseCozinheiro[index]);
+    public ArrayList<String> encontrarPedidos (int pos) {
+        ArrayList<String> pedidosRecebidos = new ArrayList<>();
+        System.out.println(registro.getCardapios().size());
+        if (registro.getCardapios().size() <= 0 ) {
+            System.out.println("Nenhum pedido foi feito até agora");
+        }
+        else {
+            String[] cardapioDesseCozinheiro = registro.getCardapios().get(pos); //NESSA LINHA
+            int index;
+                for (index = 0; index < cardapioDesseCozinheiro.length; index++) {
+                    if (fazerpedido.pedidosFeitos.contains(cardapioDesseCozinheiro[index])) {
+                        pedidosRecebidos.add(cardapioDesseCozinheiro[index]);
+                    }
+                } 
+                if(pedidosRecebidos.size()==0){
+                    System.out.println("Não possui nenhum pedido no momento");
                 }
-            } 
-            if(pedidosRecebidos.size()==0){
-                System.out.println("Não possui nenhum pedido no momento");
-            }
+        }
         return pedidosRecebidos;
     }
 

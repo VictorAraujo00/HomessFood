@@ -13,7 +13,7 @@ public class FazerPedido {
     private String pedido;
     ArrayList<String> pedidosFeitos = new ArrayList<String>();
 
-    public FazerPedido(ArrayList<String> pedidosFeitos){
+    public FazerPedido(){
         this.quantPedidos=quantPedidos;
         this.avaliacao=avaliacao;
         this.mediaAvaliacao=mediaAvaliacao;
@@ -63,7 +63,7 @@ public class FazerPedido {
         return pedido;
     }
 
-    public void receberPedidos(LinkedList<String> pedidosRecebidos){
+    public void receberPedidos(ArrayList<String> pedidosRecebidos){
         System.out.println(" ========================== ");
         System.out.println("PEDIDOS REALIZADOS: ");
         if (pedidosRecebidos.isEmpty()) {

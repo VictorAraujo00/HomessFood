@@ -57,7 +57,7 @@ public class Registro extends Pessoa implements ICadastro{
         for (int i = 0; i < quantidadeDeCardapios; i++) {
             System.out.println("Prato "+(i+1)+ ": " + cardapio[i]);
         }
-        return getCardapios();
+        return this.cardapios;
      }
 
      public ArrayList<String[]> getCardapios() {
@@ -81,14 +81,11 @@ public class Registro extends Pessoa implements ICadastro{
     public Pessoa CadastroCliente() {
         System.out.println("Digite seu nome de usuário: ");
         String nome = sc.nextLine();
-       
         System.out.println("Digite uma senha numérica: ");
         int senha = sc.nextInt(); sc.nextLine();
-       
         String user = "Cliente";
-        
         Pessoa perfil = new Pessoa(nome, user, senha);
-        return perfil; //vai adicionar na lista! onde isso acontece?
+        return perfil;
     }
 
  

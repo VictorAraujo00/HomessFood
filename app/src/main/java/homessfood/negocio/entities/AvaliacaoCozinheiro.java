@@ -6,7 +6,7 @@ public class AvaliacaoCozinheiro extends Cozinheiros{
         super(nome, user, senha, cardapio);
     }
     private String[] cardapio;
-    FazerPedido pedido = new FazerPedido(null);
+    FazerPedido pedido = new FazerPedido();
     private float avaliacao; 
     private float mediaAvaliacao;//media das avaliacoes
     private int quantidadeDeAvaliacoes;
