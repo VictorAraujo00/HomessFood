@@ -25,11 +25,11 @@ public class FazerPedido {
         this.avaliacao = avaliacao;
     }
 
-    public LinkedList<String> getPedidosFeitos() {
+    public ArrayList<String> getPedidosFeitos() {
         return this.pedidosFeitos;
     }
 
-    public void setPedidosFeitos(LinkedList<String> pedidosFeitos) {
+    public void setPedidosFeitos(ArrayList<String> pedidosFeitos) {
         this.pedidosFeitos = pedidosFeitos;
     }
 
