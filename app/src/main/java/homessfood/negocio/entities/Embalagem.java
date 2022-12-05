@@ -12,11 +12,12 @@ public class Embalagem {
         public static synchronized Embalagem getInstance() {
             //se não tem vai ter um
             if (uniqueInstance == null)
-                uniqueInstance = new Embalagem();
+                uniqueInstance = new Embalagem(uniqueInstance);
             // retorna sempre aquela unica instancia que foi criada
             return uniqueInstance;
         }
         public void tipoEmbalagem(){
-
+            System.out.println("1- embalagem de papelão");
+            System.out.println("2- embalagem de plástico");
         }
 }
