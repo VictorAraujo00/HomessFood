@@ -4,10 +4,9 @@ public class Embalagem {
         // como temos uma lista só de cozinheiros colocaremos isso como singleton
         //isso garante que só vai ter uma lista de cozinheiros
         private static Embalagem uniqueInstance;
-        //construtor privado só a classe acessa
 
+        //construtor privado só a classe acessa
         private Embalagem() {
-            
         }
         public static synchronized Embalagem getInstance() {
             //se não tem vai ter um
@@ -16,7 +15,8 @@ public class Embalagem {
             // retorna sempre aquela unica instancia que foi criada
             return uniqueInstance;
         }
-        public void tipoEmbalagem(){
-
-        }
+        // public void tipoEmbalagem(){
+        //     System.out.println("1- embalagem de papelão");
+        //     System.out.println("2- embalagem de plástico");
+        // }
 }

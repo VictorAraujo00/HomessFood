@@ -37,6 +37,15 @@ public class Registro extends Pessoa implements ICadastro{
          //Cardapio();
          return perfil;
      }
+     public Pessoa CadastroCliente() {
+        System.out.println("Digite seu nome de usuário: ");
+        String nome = sc.nextLine();
+        System.out.println("Digite uma senha numérica: ");
+        int senha = sc.nextInt(); sc.nextLine();
+        String user = "Cliente";
+        Pessoa perfil = new Pessoa(nome, user, senha);
+        return perfil;
+    }
 
      public ArrayList<String[]> criarCardapio(Pessoa perfil) {
         System.out.println("Quantos pratos terá em seu cardápio? ");
@@ -80,15 +89,6 @@ public class Registro extends Pessoa implements ICadastro{
         return this.cardapio;
     }
 
-    public Pessoa CadastroCliente() {
-        System.out.println("Digite seu nome de usuário: ");
-        String nome = sc.nextLine();
-        System.out.println("Digite uma senha numérica: ");
-        int senha = sc.nextInt(); sc.nextLine();
-        String user = "Cliente";
-        Pessoa perfil = new Pessoa(nome, user, senha);
-        return perfil;
-    }
 
  
 
