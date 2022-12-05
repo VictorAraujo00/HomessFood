@@ -4,10 +4,10 @@ public class Embalagem {
         // como temos uma lista só de cozinheiros colocaremos isso como singleton
         //isso garante que só vai ter uma lista de cozinheiros
         private static Embalagem uniqueInstance;
-        //construtor privado só a classe acessa
 
-        private Embalagem() {
-            
+        //construtor privado só a classe acessa
+        private Embalagem(Embalagem uniqueInstance) {
+            this.uniqueInstance= uniqueInstance;
         }
         public static synchronized Embalagem getInstance() {
             //se não tem vai ter um
