@@ -6,18 +6,17 @@ public class Embalagem {
         private static Embalagem uniqueInstance;
 
         //construtor privado só a classe acessa
-        private Embalagem(Embalagem uniqueInstance) {
-            this.uniqueInstance= uniqueInstance;
+        private Embalagem() {
         }
         public static synchronized Embalagem getInstance() {
             //se não tem vai ter um
             if (uniqueInstance == null)
-                uniqueInstance = new Embalagem(uniqueInstance);
+                uniqueInstance = new Embalagem();
             // retorna sempre aquela unica instancia que foi criada
             return uniqueInstance;
         }
-        public void tipoEmbalagem(){
-            System.out.println("1- embalagem de papelão");
-            System.out.println("2- embalagem de plástico");
-        }
+        // public void tipoEmbalagem(){
+        //     System.out.println("1- embalagem de papelão");
+        //     System.out.println("2- embalagem de plástico");
+        // }
 }
