@@ -7,9 +7,8 @@ import java.util.Scanner;
 public class FazerPedido {
     Scanner sc = new Scanner(System.in);
     private int quantPedidos, somaAvaliacao=0, quantAvaliacoes=0; 
-    //private String[] pedidos; //o tamanho será a quantia de pedidos
     private int avaliacao; 
-    private float mediaAvaliacao;//fazer calculo de média, só vai adiconar, não aparece a avaliação individual; e será feita após o pedido (perguntando se foi recebido)
+    private float mediaAvaliacao; 
     private String pedido;
     ArrayList<String> pedidosFeitos = new ArrayList<String>();
 

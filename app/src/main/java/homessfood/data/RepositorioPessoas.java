@@ -69,8 +69,6 @@ public class RepositorioPessoas implements IRepository  {
                 }catch(ExcecaoLogin e){
                     System.out.println("Usuário não corresponde /  Senha incorreta");
                 }
-
-
     }
 
     public void cadastroClientes(){
